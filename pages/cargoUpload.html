@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LogiFlow Global - Upload Cargo Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#d2e4fb",
+                    "surface-container-high": "#dce9ff",
+                    "outline": "#74777d",
+                    "on-secondary-fixed": "#351000",
+                    "error": "#ba1a1a",
+                    "surface-container": "#e5eeff",
+                    "on-tertiary-container": "#00a396",
+                    "primary": "#041627",
+                    "background": "#f8f9ff",
+                    "on-primary": "#ffffff",
+                    "outline-variant": "#c4c6cd",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-surface": "#0b1c30",
+                    "secondary-fixed": "#ffdbcc",
+                    "surface-bright": "#f8f9ff",
+                    "tertiary": "#001916",
+                    "on-primary-fixed-variant": "#38485a",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#eff4ff",
+                    "on-surface-variant": "#44474c",
+                    "tertiary-container": "#00302b",
+                    "secondary": "#a04100",
+                    "tertiary-fixed": "#7cf6e7",
+                    "inverse-primary": "#b7c8de",
+                    "on-primary-container": "#8192a7",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "secondary-fixed-dim": "#ffb693",
+                    "on-secondary-fixed-variant": "#7a3000",
+                    "on-primary-fixed": "#0b1d2d",
+                    "surface": "#f8f9ff",
+                    "tertiary-fixed-dim": "#5ddacb",
+                    "on-tertiary-fixed-variant": "#005049",
+                    "inverse-surface": "#213145",
+                    "primary-fixed-dim": "#b7c8de",
+                    "on-tertiary": "#ffffff",
+                    "surface-tint": "#4f6073",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed": "#00201d",
+                    "primary-container": "#1a2b3c",
+                    "on-secondary-container": "#572000",
+                    "surface-variant": "#d3e4fe",
+                    "on-background": "#0b1c30",
+                    "surface-dim": "#cbdbf5",
+                    "secondary-container": "#fe6b00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "1.5rem",
+                    "base": "4px",
+                    "lg": "2rem",
+                    "sm": "1rem",
+                    "margin": "2rem",
+                    "xl": "3rem",
+                    "xs": "0.5rem",
+                    "md": "1.5rem"
+            },
+            "fontFamily": {
+                    "h1": ["Inter"],
+                    "status-label": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "h3": ["Inter"],
+                    "h2": ["Inter"],
+                    "data-mono": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "h1": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "status-label": ["12px", {"lineHeight": "1", "letterSpacing": "0", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                    "h3": ["20px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600"}],
+                    "h2": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "data-mono": ["14px", {"lineHeight": "1", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 10px;
+      }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-background min-h-screen">
+<!-- TopNavBar -->
+<header class="flex items-center justify-between px-6 h-16 w-full sticky top-0 z-50 bg-white dark:bg-slate-900 shadow-sm border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-8">
+<span class="text-xl font-black text-slate-900 dark:text-white tracking-tighter">LogiFlow Global</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="font-['Inter'] text-sm tracking-tight text-orange-600 dark:text-orange-500 font-bold border-b-2 border-orange-600 pb-1" href="#">Cargo Owner</a>
+<a class="font-['Inter'] text-sm tracking-tight text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 transition-colors" href="#">Container Owner</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<button class="p-2 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">notifications</span>
+</button>
+<button class="p-2 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">help</span>
+</button>
+<button class="p-2 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined text-slate-500 dark:text-slate-400">settings</span>
+</button>
+</div>
+<img alt="User profile avatar" class="w-8 h-8 rounded-full border border-slate-200" data-alt="Professional headshot of a logistics manager in a modern office setting with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBa_fMGJgbLew0VsPIL9a-JC4OxfMCSjJVrfQfNw8m5S67zzK0o6C7TEthm4a8Sh2jyau_sAf7lgOwGpgCBxodzV7PQnbl17UZ7nhy04BL5q2umYq00u2hNjbJgrieZhuI3qKrk65p3qnffBQ7Qm1Haj0bxJCrowoSXaZCsJufJGnHoKM3-8-dRaucYoAov8H2uq7bwOjL5aHcU3sAOiJtHM7GhQ_Qgop6iG4SfNV_apGwYdLNEcrOqHPJyIJfDU1xX1MAkYAFnQHw"/>
+</div>
+</header>
+<div class="flex h-[calc(100vh-64px)]">
+<!-- SideNavBar -->
+<aside class="flex flex-col fixed left-0 top-16 h-[calc(100vh-64px)] w-64 p-4 gap-2 z-40 bg-slate-50 dark:bg-slate-950 border-r border-slate-200 dark:border-slate-800 no-shadow">
+<div class="mb-4 px-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container">apartment</span>
+</div>
+<div>
+<div class="font-['Inter'] text-sm font-semibold text-slate-900 dark:text-white">Fleet Manager</div>
+<div class="text-[11px] text-slate-500">Global Terminal 4</div>
+</div>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-1">
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 px-3 py-2 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 hover:text-slate-900 dark:hover:text-white transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-['Inter'] text-sm font-semibold">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-md shadow-sm px-3 py-2 border border-slate-200 dark:border-slate-700 transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">local_shipping</span>
+<span class="font-['Inter'] text-sm font-semibold">Shipments</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 px-3 py-2 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 hover:text-slate-900 dark:hover:text-white transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-['Inter'] text-sm font-semibold">Inventory</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 px-3 py-2 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 hover:text-slate-900 dark:hover:text-white transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="font-['Inter'] text-sm font-semibold">Analytics</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 px-3 py-2 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 hover:text-slate-900 dark:hover:text-white transition-all duration-200 ease-in-out" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="font-['Inter'] text-sm font-semibold">Documents</span>
+</a>
+</nav>
+<button class="mt-4 bg-secondary-container text-on-primary font-['Inter'] text-sm font-bold py-2 px-4 rounded-lg shadow-sm hover:opacity-90 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span>
+                New Shipment
+            </button>
+<div class="mt-auto border-t border-slate-200 dark:border-slate-800 pt-4 flex flex-col gap-1">
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 px-3 py-2 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 hover:text-slate-900 dark:hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">support_agent</span>
+<span class="font-['Inter'] text-sm font-semibold">Support</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 px-3 py-2 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 hover:text-slate-900 dark:hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-['Inter'] text-sm font-semibold">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 flex-1 p-8 overflow-y-auto custom-scrollbar bg-[#F8FAFC]">
+<div class="max-w-5xl mx-auto">
+<div class="flex items-center justify-between mb-8">
+<div>
+<h1 class="font-h1 text-h1 text-primary">Upload Cargo Details</h1>
+<p class="text-on-surface-variant font-body-md">Precision logistics starts with accurate cargo data entry.</p>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-white rounded-xl shadow-sm border border-outline-variant/30">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="text-label-caps font-label-caps text-secondary uppercase">Draft Saved</span>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-8">
+<!-- Form Section -->
+<div class="col-span-12 lg:col-span-8 space-y-6">
+<!-- Primary Details Card -->
+<div class="bg-white rounded-xl border border-outline-variant/30 shadow-[0px_4px_4px_rgba(0,0,0,0.05)] p-6">
+<div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<h3 class="font-h3 text-h3">Routing &amp; Core Data</h3>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div class="col-span-2">
+<label class="block text-label-caps font-label-caps text-on-surface-variant mb-2">DESTINATION PORT / FACILITY</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-lg border border-outline-variant focus:ring-2 focus:ring-primary focus:border-primary transition-all font-body-md" placeholder="e.g. Port of Rotterdam, Netherlands" type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-label-caps font-label-caps text-on-surface-variant mb-2">TOTAL CBM (m³)</label>
+<input class="w-full px-4 py-3 rounded-lg border border-outline-variant focus:ring-2 focus:ring-primary focus:border-primary transition-all font-data-mono" placeholder="0.00" type="number"/>
+</div>
+<div>
+<label class="block text-label-caps font-label-caps text-on-surface-variant mb-2">TOTAL WEIGHT (KG)</label>
+<input class="w-full px-4 py-3 rounded-lg border border-outline-variant focus:ring-2 focus:ring-primary focus:border-primary transition-all font-data-mono" placeholder="0.00" type="number"/>
+</div>
+</div>
+</div>
+<!-- Technical Specifications Bento -->
+<div class="grid grid-cols-2 gap-6">
+<div class="bg-white rounded-xl border border-outline-variant/30 shadow-[0px_4px_4px_rgba(0,0,0,0.05)] p-6">
+<div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100">
+<span class="material-symbols-outlined text-primary">straighten</span>
+<h3 class="font-h3 text-h3">Dimensions</h3>
+</div>
+<div class="flex gap-2 items-center">
+<div class="flex-1">
+<input class="w-full px-3 py-2 text-center rounded border border-outline-variant font-data-mono" placeholder="L" type="text"/>
+</div>
+<span class="text-outline">×</span>
+<div class="flex-1">
+<input class="w-full px-3 py-2 text-center rounded border border-outline-variant font-data-mono" placeholder="W" type="text"/>
+</div>
+<span class="text-outline">×</span>
+<div class="flex-1">
+<input class="w-full px-3 py-2 text-center rounded border border-outline-variant font-data-mono" placeholder="H" type="text"/>
+</div>
+<span class="text-xs font-bold text-outline">METERS</span>
+</div>
+<p class="mt-4 text-body-sm text-on-surface-variant">Enter the maximum bounding box dimensions per unit.</p>
+</div>
+<div class="bg-white rounded-xl border border-outline-variant/30 shadow-[0px_4px_4px_rgba(0,0,0,0.05)] p-6">
+<div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100">
+<span class="material-symbols-outlined text-primary">category</span>
+<h3 class="font-h3 text-h3">Cargo Type</h3>
+</div>
+<select class="w-full px-4 py-3 rounded-lg border border-outline-variant focus:ring-2 focus:ring-primary focus:border-primary appearance-none bg-no-repeat bg-[right_1rem_center] bg-[length:1em_1em] font-body-md">
+<option>General Cargo</option>
+<option>Hazardous (IMO Class)</option>
+<option>Reefer (Temperature Controlled)</option>
+<option>Fragile / High Value</option>
+<option>Over-Dimensional (Breakbulk)</option>
+</select>
+</div>
+</div>
+<!-- Documentation & Verification -->
+<div class="bg-white rounded-xl border border-outline-variant/30 shadow-[0px_4px_4px_rgba(0,0,0,0.05)] p-6">
+<div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100">
+<span class="material-symbols-outlined text-primary">add_a_photo</span>
+<h3 class="font-h3 text-h3">Visual Verification</h3>
+</div>
+<div class="border-2 border-dashed border-outline-variant rounded-xl p-8 flex flex-col items-center justify-center bg-slate-50/50 hover:bg-slate-50 transition-colors cursor-pointer group">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'wght' 600;">upload</span>
+</div>
+<p class="font-h3 text-h3 text-center">Click to upload cargo photos</p>
+<p class="text-on-surface-variant text-body-sm text-center mt-1">Accepts JPG, PNG, PDF (Max 10MB per file)</p>
+</div>
+<div class="grid grid-cols-4 gap-4 mt-6">
+<div class="aspect-square rounded-lg bg-slate-100 overflow-hidden relative group border border-outline-variant/30">
+<img alt="Cargo pallet" class="w-full h-full object-cover" data-alt="High-angle shot of a neatly shrink-wrapped wooden pallet containing cardboard boxes in a warehouse environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtx2ODjIdxPN8hZOyI4vh9uOJHwbtlubN_cLDWuZGPPDOFwktKNrjGJ1h29ezdGxNjDj3mJDCAoyIsPiRYdkTUZfvhpab595z5JX8EAgEYZm8NNJJGtfCUzFmEYTISQdMlKXqS6yRG6tQawjQh1qoY_VV7uggKqf8q4C8XjiDFcQvb60Ux77hlX8SSen8GVw9oaD-XXu2d03YgZP9isWKUioVDaShvH07EugBQ0hzVaBlk5OfSVO_4ao6bNxsynb-UBLLG7-Tw2Vk"/>
+<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-white cursor-pointer">delete</span>
+</div>
+</div>
+<div class="aspect-square rounded-lg bg-slate-100 border-2 border-dashed border-outline-variant/50 flex items-center justify-center">
+<span class="material-symbols-outlined text-outline">add</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Side Info & Actions -->
+<div class="col-span-12 lg:col-span-4 space-y-6">
+<!-- Summary Card -->
+<div class="bg-primary rounded-xl p-6 text-white shadow-xl sticky top-24">
+<h3 class="font-h3 text-h3 mb-4 text-surface-container-highest">Booking Overview</h3>
+<div class="space-y-4">
+<div class="flex justify-between border-b border-white/10 pb-2">
+<span class="text-body-sm text-surface-container-high opacity-80">Shipper Identity</span>
+<span class="text-body-sm font-semibold">GT-4 Logistics</span>
+</div>
+<div class="flex justify-between border-b border-white/10 pb-2">
+<span class="text-body-sm text-surface-container-high opacity-80">Reference ID</span>
+<span class="text-body-sm font-data-mono">LF-884920</span>
+</div>
+<div class="flex justify-between border-b border-white/10 pb-2">
+<span class="text-body-sm text-surface-container-high opacity-80">Priority Level</span>
+<div class="flex items-center gap-1">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<span class="text-body-sm font-semibold">Standard</span>
+</div>
+</div>
+</div>
+<div class="mt-8 space-y-3">
+<button class="w-full py-4 bg-secondary-container text-white rounded-lg font-h3 text-h3 shadow-lg active:scale-95 transition-all flex items-center justify-center gap-3">
+                                    Post Cargo
+                                    <span class="material-symbols-outlined">send</span>
+</button>
+<button class="w-full py-3 bg-white/10 hover:bg-white/20 text-white rounded-lg font-body-md transition-all border border-white/10">
+                                    Save as Template
+                                </button>
+</div>
+<!-- Compliance Check -->
+<div class="mt-6 p-4 bg-surface-container-low/10 rounded-lg border border-white/10">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-secondary-fixed-dim">verified_user</span>
+<div>
+<p class="text-body-sm font-bold text-white">Compliance Check</p>
+<p class="text-[12px] text-surface-container-high opacity-70">Cargo details will be cross-referenced with international trade regulations automatically.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Mini Map / Destination Context -->
+<div class="bg-white rounded-xl border border-outline-variant/30 shadow-sm overflow-hidden">
+<div class="h-32 bg-slate-200 relative">
+<img alt="Map placeholder" class="w-full h-full object-cover grayscale" data-alt="Detailed monochromatic satellite view of a large international shipping port with container terminals and industrial waterways" data-location="Rotterdam" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhf4Xz5gYfQRn1C5qk9QpmVVc6Huq_IAXqJeZpNISvgOg74GglwS78MzLGDsTeghBZ6OLkTfaTv_jq5T93QA2RqY0ECWldy9dZ5rvpkncX1WBkf7Dko-9TuiM5wH96JkHlIivVSy8CM1hTKdmgIkmbc_m8denTIKaaDluN76BtFwmJlj0-wb-jutQoOcIAL3CwIzaKdqr-UbXB0VxRiEYxml6dqPOxPOo7WAbdrEnH6jo3m_tHIn2Pn3_7qI1opP8wOjbbD6vzY3I"/>
+<div class="absolute inset-0 bg-primary/20"></div>
+<div class="absolute bottom-3 left-3 bg-white px-2 py-1 rounded shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-xs text-secondary" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<span class="text-[10px] font-bold text-primary">DESTINATION RADAR</span>
+</div>
+</div>
+<div class="p-4">
+<p class="text-body-sm text-on-surface-variant italic">"Port of Rotterdam currently has a 4-hour berthing window. Planning recommended."</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Background Decoration -->
+<div class="fixed bottom-0 right-0 -z-10 w-1/3 h-1/2 opacity-[0.03] pointer-events-none">
+<span class="material-symbols-outlined text-[400px] text-primary rotate-12">local_shipping</span>
+</div>
+</body></html>

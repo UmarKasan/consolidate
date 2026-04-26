@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="/css/style.css">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "background": "#f8f9ff",
+                        "secondary-fixed": "#ffdbcc",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#fe6b00",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#5ddacb",
+                        "secondary-fixed-dim": "#ffb693",
+                        "outline": "#74777d",
+                        "on-secondary-fixed": "#351000",
+                        "primary-fixed-dim": "#b7c8de",
+                        "surface-tint": "#4f6073",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#001916",
+                        "surface-container-high": "#dce9ff",
+                        "on-tertiary-fixed-variant": "#005049",
+                        "on-secondary-fixed-variant": "#7a3000",
+                        "on-primary-fixed-variant": "#38485a",
+                        "surface-container-low": "#eff4ff",
+                        "secondary": "#a04100",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#0b1c30",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-container": "#e5eeff",
+                        "outline-variant": "#c4c6cd",
+                        "on-tertiary-fixed": "#00201d",
+                        "on-surface": "#0b1c30",
+                        "tertiary-container": "#00302b",
+                        "surface-dim": "#cbdbf5",
+                        "surface": "#f8f9ff",
+                        "tertiary-fixed": "#7cf6e7",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#d2e4fb",
+                        "primary": "#041627",
+                        "surface-bright": "#f8f9ff",
+                        "surface-variant": "#d3e4fe",
+                        "on-secondary-container": "#572000",
+                        "inverse-primary": "#b7c8de",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-surface-variant": "#44474c",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#8192a7",
+                        "on-tertiary-container": "#00a396",
+                        "primary-container": "#1a2b3c",
+                        "inverse-surface": "#213145",
+                        "on-primary-fixed": "#0b1d2d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "sm": "1rem",
+                        "xl": "3rem",
+                        "base": "4px",
+                        "margin": "2rem",
+                        "gutter": "1.5rem",
+                        "xs": "0.5rem",
+                        "md": "1.5rem",
+                        "lg": "2rem"
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                        "data-mono": ["14px", {"lineHeight": "1", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                        "status-label": ["12px", {"lineHeight": "1", "letterSpacing": "0", "fontWeight": "600"}],
+                        "h1": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                        "h3": ["20px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600"}],
+                        "h2": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- TopNavBar -->
+<header class="bg-white dark:bg-slate-900 shadow-sm border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-6 h-16">
+<div class="flex items-center gap-8">
+<span class="text-xl font-black text-[#1A2B3C] dark:text-white tracking-tighter">CoLoad Logistics</span>
+<nav class="hidden md:flex gap-6 items-center h-full">
+<a class="font-['Inter'] text-sm font-semibold tracking-tight text-orange-600 border-b-2 border-orange-600 pb-4 mt-4 transition-colors" href="#">Find Space</a>
+<a class="font-['Inter'] text-sm font-semibold tracking-tight text-slate-600 dark:text-slate-400 pb-4 mt-4 hover:text-orange-500 transition-colors" href="#">Post Freight</a>
+<a class="font-['Inter'] text-sm font-semibold tracking-tight text-slate-600 dark:text-slate-400 pb-4 mt-4 hover:text-orange-500 transition-colors" href="#">Dashboard</a>
+<a class="font-['Inter'] text-sm font-semibold tracking-tight text-slate-600 dark:text-slate-400 pb-4 mt-4 hover:text-orange-500 transition-colors" href="#">Analytics</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex items-center bg-surface-container-low px-3 py-1.5 rounded-lg border border-outline-variant">
+<span class="material-symbols-outlined text-on-surface-variant text-sm mr-2">search</span>
+<input class="bg-transparent border-none text-sm focus:ring-0 w-48 text-on-surface" placeholder="Search routes..." type="text"/>
+</div>
+<button class="p-2 text-slate-600 hover:bg-slate-100 rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-600 hover:bg-slate-100 rounded-full transition-all">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-primary-container overflow-hidden border border-slate-200">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="close-up portrait of a professional logistics manager in a modern office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDagV3IkYq9b5Uqt7K-gFPFQtl-LIK1UwRKG3MqahbCqdJ9cf3sT4ghMcUu07lvu7KHQBSgrZ5Y4rfXl6hUOAbxdFuSBI6yjySfbsyUQVBjrSJz4qi002V-oXenVmAWqXsJem9poOS9MAaxPimgHTSvmSOHP8d8-s_c01AcPpUdqBUtHWHZ4pgj-O8lwwb5F_jy4MVYhLoiFOVqZYwC8YTIO9Lgg9mRqvIlY4qROy2rRdeYRx7qFzOSpOwK50cKooP0D-l5moLSKWQ"/>
+</div>
+</div>
+</div>
+</header>
+<main class="flex min-h-[calc(100vh-64px)]">
+<!-- SideNavBar -->
+<aside class="hidden lg:flex flex-col h-[calc(100vh-64px)] sticky top-16 w-64 border-r border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950">
+<div class="p-6">
+<div class="flex items-center gap-3 mb-8">
+<div class="w-10 h-10 bg-secondary-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="hub">hub</span>
+</div>
+<div>
+<h3 class="font-['Inter'] text-xs font-bold uppercase tracking-wider text-orange-600">Global Freight Ops</h3>
+<p class="text-[10px] text-slate-500 uppercase font-bold tracking-widest">Standard Account</p>
+</div>
+</div>
+<button class="w-full bg-secondary-container text-white py-3 rounded-lg font-bold text-sm mb-8 hover:bg-secondary transition-all active:scale-95 flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">add</span>
+                    New Shipment
+                </button>
+<nav class="space-y-1">
+<div class="flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:pl-6 transition-all duration-200">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-['Inter'] text-xs font-bold uppercase tracking-wider">Overview</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer bg-white dark:bg-slate-900 text-orange-600 shadow-sm border-l-4 border-orange-600 hover:pl-6 transition-all duration-200">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-['Inter'] text-xs font-bold uppercase tracking-wider">My Shipments</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:pl-6 transition-all duration-200">
+<span class="material-symbols-outlined">view_in_ar</span>
+<span class="font-['Inter'] text-xs font-bold uppercase tracking-wider">Container Planner</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:pl-6 transition-all duration-200">
+<span class="material-symbols-outlined">hub</span>
+<span class="font-['Inter'] text-xs font-bold uppercase tracking-wider">Network</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:pl-6 transition-all duration-200">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-['Inter'] text-xs font-bold uppercase tracking-wider">Settings</span>
+</div>
+</nav>
+</div>
+<div class="mt-auto p-6 border-t border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all duration-200">
+<span class="material-symbols-outlined">contact_support</span>
+<span class="font-['Inter'] text-xs font-bold uppercase tracking-wider">Support</span>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="flex-1 overflow-y-auto p-6 lg:p-8">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+<div>
+<h1 class="font-h1 text-h1 text-primary mb-2">Available Container Space</h1>
+<p class="font-body-md text-body-md text-on-primary-container">Found 24 matches for <span class="font-semibold text-primary">Shanghai (CNSHA) → Rotterdam (NLRTM)</span></p>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-label-caps font-label-caps text-outline uppercase">Sort By:</span>
+<select class="bg-white border border-outline-variant rounded-lg px-4 py-2 text-sm focus:ring-primary focus:border-primary">
+<option>Lowest Price / CBM</option>
+<option>Shortest Transit Time</option>
+<option>Earliest Departure</option>
+</select>
+</div>
+</div>
+<!-- Filter Bar -->
+<section class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 mb-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant block uppercase">Departure Date Range</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm">calendar_month</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-background border border-outline-variant rounded-lg text-sm" type="text" value="Oct 12 - Oct 28, 2023"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant block uppercase">Volume Needed (CBM)</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-sm">view_in_ar</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-background border border-outline-variant rounded-lg text-sm" type="number" value="12.5"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant block uppercase">Carrier Tier</label>
+<div class="flex gap-2">
+<button class="flex-1 bg-primary text-white py-2.5 rounded-lg text-xs font-bold">Standard</button>
+<button class="flex-1 bg-background text-on-surface-variant py-2.5 rounded-lg text-xs font-bold border border-outline-variant">Premium</button>
+</div>
+</div>
+<div class="flex items-end">
+<button class="w-full bg-secondary-container text-white h-[42px] rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-secondary transition-all">
+<span class="material-symbols-outlined text-sm">filter_alt</span>
+                            Apply Filters
+                        </button>
+</div>
+</div>
+</section>
+<!-- Search Results Cards -->
+<div class="space-y-4">
+<!-- Result Card 1 -->
+<div class="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-md transition-shadow">
+<div class="p-6 flex flex-col lg:flex-row lg:items-center gap-8">
+<!-- Carrier Info -->
+<div class="flex-1 min-w-[240px]">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center border border-slate-200">
+<span class="material-symbols-outlined text-primary text-2xl">directions_boat</span>
+</div>
+<div>
+<h4 class="font-h3 text-h3 text-primary">Maersk Line</h4>
+<p class="font-status-label text-status-label text-teal-600">ON TIME RELIABILITY: 94%</p>
+</div>
+</div>
+<div class="flex items-center gap-4 text-sm">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>24 Days Transit</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">anchor</span>
+<span>Direct Route</span>
+</div>
+</div>
+</div>
+<!-- Route Visual -->
+<div class="flex-[1.5] flex items-center gap-4">
+<div class="text-center">
+<p class="text-label-caps font-label-caps text-outline">DEPARTURE</p>
+<p class="font-data-mono text-data-mono text-primary">OCT 14</p>
+<p class="text-[11px] font-bold text-on-surface-variant">CNSHA</p>
+</div>
+<div class="flex-1 flex flex-col items-center">
+<div class="w-full h-[2px] bg-slate-200 relative">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-white border-2 border-slate-200 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-slate-400">sailing</span>
+</div>
+</div>
+<p class="text-[10px] mt-2 text-outline font-medium">VESSEL: ELIZA MAERSK</p>
+</div>
+<div class="text-center">
+<p class="text-label-caps font-label-caps text-outline">ARRIVAL</p>
+<p class="font-data-mono text-data-mono text-primary">NOV 07</p>
+<p class="text-[11px] font-bold text-on-surface-variant">NLRTM</p>
+</div>
+</div>
+<!-- Space & Price -->
+<div class="flex-1 min-w-[200px] border-l border-slate-100 pl-8">
+<div class="mb-4">
+<p class="text-label-caps font-label-caps text-outline mb-1">PRICE PER CBM</p>
+<div class="flex items-baseline gap-1">
+<span class="text-h2 font-h2 text-primary">$185.00</span>
+<span class="text-xs text-on-surface-variant">/ CBM</span>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs mb-1.5">
+<span class="font-bold text-on-surface">Space Remaining</span>
+<span class="font-data-mono text-orange-600">8.4 CBM</span>
+</div>
+<div class="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-orange-600 rounded-full" style="width: 15%;"></div>
+</div>
+<p class="text-[10px] text-orange-600 font-bold mt-1 uppercase tracking-tight">Selling fast — only 2 spaces left</p>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-2">
+<button class="bg-secondary-container text-white px-6 py-2.5 rounded-lg font-bold text-sm hover:bg-secondary transition-all">Request Quote</button>
+<button class="bg-white border border-outline-variant text-primary px-6 py-2.5 rounded-lg font-bold text-sm hover:bg-slate-50 transition-all">Details</button>
+</div>
+</div>
+</div>
+<!-- Result Card 2 -->
+<div class="bg-white border border-slate-200 rounded-xl overflow-hidden hover:shadow-md transition-shadow">
+<div class="p-6 flex flex-col lg:flex-row lg:items-center gap-8">
+<!-- Carrier Info -->
+<div class="flex-1 min-w-[240px]">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center border border-slate-200">
+<span class="material-symbols-outlined text-primary text-2xl">local_shipping</span>
+</div>
+<div>
+<h4 class="font-h3 text-h3 text-primary">COSCO Shipping</h4>
+<p class="font-status-label text-status-label text-on-primary-container">ON TIME RELIABILITY: 88%</p>
+</div>
+</div>
+<div class="flex items-center gap-4 text-sm">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>28 Days Transit</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">hub</span>
+<span>1 Transshipment (SGP)</span>
+</div>
+</div>
+</div>
+<!-- Route Visual -->
+<div class="flex-[1.5] flex items-center gap-4">
+<div class="text-center">
+<p class="text-label-caps font-label-caps text-outline">DEPARTURE</p>
+<p class="font-data-mono text-data-mono text-primary">OCT 16</p>
+<p class="text-[11px] font-bold text-on-surface-variant">CNSHA</p>
+</div>
+<div class="flex-1 flex flex-col items-center">
+<div class="w-full h-[2px] bg-slate-200 relative">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-white border-2 border-slate-200 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-slate-400">sailing</span>
+</div>
+</div>
+<p class="text-[10px] mt-2 text-outline font-medium">VESSEL: COSCO PRIDE</p>
+</div>
+<div class="text-center">
+<p class="text-label-caps font-label-caps text-outline">ARRIVAL</p>
+<p class="font-data-mono text-data-mono text-primary">NOV 13</p>
+<p class="text-[11px] font-bold text-on-surface-variant">NLRTM</p>
+</div>
+</div>
+<!-- Space & Price -->
+<div class="flex-1 min-w-[200px] border-l border-slate-100 pl-8">
+<div class="mb-4">
+<p class="text-label-caps font-label-caps text-outline mb-1">PRICE PER CBM</p>
+<div class="flex items-baseline gap-1">
+<span class="text-h2 font-h2 text-primary">$162.50</span>
+<span class="text-xs text-on-surface-variant">/ CBM</span>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs mb-1.5">
+<span class="font-bold text-on-surface">Space Remaining</span>
+<span class="font-data-mono text-on-primary-container">42.0 CBM</span>
+</div>
+<div class="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 70%;"></div>
+</div>
+<p class="text-[10px] text-on-primary-container font-bold mt-1 uppercase tracking-tight">Available space: High</p>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-2">
+<button class="bg-secondary-container text-white px-6 py-2.5 rounded-lg font-bold text-sm hover:bg-secondary transition-all">Request Quote</button>
+<button class="bg-white border border-outline-variant text-primary px-6 py-2.5 rounded-lg font-bold text-sm hover:bg-slate-50 transition-all">Details</button>
+</div>
+</div>
+</div>
+<!-- Result Card 3 (Featured/Fastest) -->
+<div class="bg-primary-container border-2 border-orange-600 rounded-xl overflow-hidden relative">
+<div class="absolute top-0 right-0 bg-orange-600 text-white text-[10px] font-black px-3 py-1 rounded-bl-lg uppercase tracking-widest">Fastest Connection</div>
+<div class="p-6 flex flex-col lg:flex-row lg:items-center gap-8">
+<!-- Carrier Info -->
+<div class="flex-1 min-w-[240px]">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center border border-slate-700">
+<span class="material-symbols-outlined text-primary text-2xl">bolt</span>
+</div>
+<div>
+<h4 class="font-h3 text-h3 text-white">Hapag-Lloyd</h4>
+<p class="font-status-label text-status-label text-orange-400">EXPRESS SERVICE</p>
+</div>
+</div>
+<div class="flex items-center gap-4 text-sm">
+<div class="flex items-center gap-1.5 text-slate-300">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>21 Days Transit</span>
+</div>
+<div class="flex items-center gap-1.5 text-slate-300">
+<span class="material-symbols-outlined text-sm">verified</span>
+<span>Guaranteed Loading</span>
+</div>
+</div>
+</div>
+<!-- Route Visual -->
+<div class="flex-[1.5] flex items-center gap-4">
+<div class="text-center">
+<p class="text-label-caps font-label-caps text-slate-400">DEPARTURE</p>
+<p class="font-data-mono text-data-mono text-white">OCT 15</p>
+<p class="text-[11px] font-bold text-slate-400">CNSHA</p>
+</div>
+<div class="flex-1 flex flex-col items-center">
+<div class="w-full h-[2px] bg-slate-700 relative">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-primary-container border-2 border-slate-700 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-orange-600">flash_on</span>
+</div>
+</div>
+<p class="text-[10px] mt-2 text-slate-400 font-medium uppercase">Premium Express</p>
+</div>
+<div class="text-center">
+<p class="text-label-caps font-label-caps text-slate-400">ARRIVAL</p>
+<p class="font-data-mono text-data-mono text-white">NOV 05</p>
+<p class="text-[11px] font-bold text-slate-400">NLRTM</p>
+</div>
+</div>
+<!-- Space & Price -->
+<div class="flex-1 min-w-[200px] border-l border-slate-700 pl-8">
+<div class="mb-4">
+<p class="text-label-caps font-label-caps text-slate-400 mb-1 uppercase">EXPRESS PRICE</p>
+<div class="flex items-baseline gap-1">
+<span class="text-h2 font-h2 text-white">$210.00</span>
+<span class="text-xs text-slate-400">/ CBM</span>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs mb-1.5">
+<span class="font-bold text-white">Space Remaining</span>
+<span class="font-data-mono text-orange-400">12.0 CBM</span>
+</div>
+<div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+<div class="h-full bg-orange-600 rounded-full" style="width: 25%;"></div>
+</div>
+<p class="text-[10px] text-orange-400 font-bold mt-1 uppercase tracking-tight">Priority booking enabled</p>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-2">
+<button class="bg-orange-600 text-white px-6 py-2.5 rounded-lg font-bold text-sm hover:bg-orange-500 transition-all shadow-lg shadow-orange-900/20">Request Quote</button>
+<button class="bg-transparent border border-slate-600 text-white px-6 py-2.5 rounded-lg font-bold text-sm hover:bg-slate-800 transition-all">Details</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Empty State / Load More (As per request to have high-end UI patterns) -->
+<div class="mt-12 flex flex-col items-center">
+<button class="group flex items-center gap-3 text-primary font-bold hover:gap-5 transition-all py-4 px-8 border-2 border-slate-200 rounded-full bg-white shadow-sm">
+                    Load More Results
+                    <span class="material-symbols-outlined group-hover:translate-y-1 transition-transform">expand_more</span>
+</button>
+<p class="mt-4 text-body-sm text-outline font-body-sm italic">Showing 3 of 24 matches found in global database</p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="lg:hidden fixed bottom-0 left-0 w-full z-50 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 flex justify-around items-center h-16 pb-safe px-4 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Inter'] text-[10px] font-medium">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-orange-600 font-bold active:scale-95 transition-transform">
+<span class="material-symbols-outlined">search</span>
+<span class="font-['Inter'] text-[10px] font-medium">Search</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="font-['Inter'] text-[10px] font-medium">Post</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 active:scale-95 transition-transform">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Inter'] text-[10px] font-medium">Profile</span>
+</div>
+</nav>
+<!-- Floating Action Button (Only on Mobile Search Result Screens) -->
+<div class="lg:hidden fixed bottom-20 right-6">
+<button class="w-14 h-14 bg-orange-600 text-white rounded-full shadow-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">map</span>
+</button>
+</div>
+</body></html>

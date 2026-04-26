@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="`width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link href="css/style.css" />
+    <script src="api/searchbox.js"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              background: "#f8f9ff",
+              "secondary-fixed": "#ffdbcc",
+              "on-error": "#ffffff",
+              "secondary-container": "#fe6b00",
+              "on-error-container": "#93000a",
+              "tertiary-fixed-dim": "#5ddacb",
+              "secondary-fixed-dim": "#ffb693",
+              outline: "#74777d",
+              "on-secondary-fixed": "#351000",
+              "primary-fixed-dim": "#b7c8de",
+              "surface-tint": "#4f6073",
+              "on-tertiary": "#ffffff",
+              tertiary: "#001916",
+              "surface-container-high": "#dce9ff",
+              "on-tertiary-fixed-variant": "#005049",
+              "on-secondary-fixed-variant": "#7a3000",
+              "on-primary-fixed-variant": "#38485a",
+              "surface-container-low": "#eff4ff",
+              secondary: "#a04100",
+              "on-primary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "on-background": "#0b1c30",
+              "error-container": "#ffdad6",
+              "inverse-on-surface": "#eaf1ff",
+              "surface-container": "#e5eeff",
+              "outline-variant": "#c4c6cd",
+              "on-tertiary-fixed": "#00201d",
+              "on-surface": "#0b1c30",
+              "tertiary-container": "#00302b",
+              "surface-dim": "#cbdbf5",
+              surface: "#f8f9ff",
+              "tertiary-fixed": "#7cf6e7",
+              error: "#ba1a1a",
+              "primary-fixed": "#d2e4fb",
+              primary: "#041627",
+              "surface-bright": "#f8f9ff",
+              "surface-variant": "#d3e4fe",
+              "on-secondary-container": "#572000",
+              "inverse-primary": "#b7c8de",
+              "surface-container-highest": "#d3e4fe",
+              "on-surface-variant": "#44474c",
+              "on-secondary": "#ffffff",
+              "on-primary-container": "#8192a7",
+              "on-tertiary-container": "#00a396",
+              "primary-container": "#1a2b3c",
+              "inverse-surface": "#213145",
+              "on-primary-fixed": "#0b1d2d",
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
+            },
+            spacing: {
+              sm: "1rem",
+              xl: "3rem",
+              base: "4px",
+              margin: "2rem",
+              gutter: "1.5rem",
+              xs: "0.5rem",
+              md: "1.5rem",
+              lg: "2rem",
+            },
+            fontFamily: {
+              "body-lg": ["Inter"],
+              "body-md": ["Inter"],
+              "data-mono": ["Inter"],
+              "status-label": ["Inter"],
+              h1: ["Inter"],
+              "label-caps": ["Inter"],
+              "body-sm": ["Inter"],
+              h3: ["Inter"],
+              h2: ["Inter"],
+            },
+            fontSize: {
+              "body-lg": [
+                "18px",
+                { lineHeight: "1.6", letterSpacing: "0", fontWeight: "400" },
+              ],
+              "body-md": [
+                "16px",
+                { lineHeight: "1.5", letterSpacing: "0", fontWeight: "400" },
+              ],
+              "data-mono": [
+                "14px",
+                {
+                  lineHeight: "1",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "500",
+                },
+              ],
+              "status-label": [
+                "12px",
+                { lineHeight: "1", letterSpacing: "0", fontWeight: "600" },
+              ],
+              h1: [
+                "36px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "label-caps": [
+                "12px",
+                { lineHeight: "1", letterSpacing: "0.05em", fontWeight: "700" },
+              ],
+              "body-sm": [
+                "14px",
+                { lineHeight: "1.5", letterSpacing: "0", fontWeight: "400" },
+              ],
+              h3: [
+                "20px",
+                { lineHeight: "1.4", letterSpacing: "0", fontWeight: "600" },
+              ],
+              h2: [
+                "24px",
+                {
+                  lineHeight: "1.3",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-background font-body-md text-on-background">
+    <!-- TopNavBar -->
+    <header
+      class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shadow-sm sticky top-0 z-50"
+    >
+      <div class="flex justify-between items-center w-full px-6 h-16">
+        <div class="flex items-center gap-8">
+          <span
+            class="text-xl font-black text-[#1A2B3C] dark:text-white tracking-tighter"
+            >CoLoad Logistics</span
+          >
+          <nav class="hidden md:flex gap-6"></nav>
+        </div>
+        <div class="flex items-center gap-4">
+          <button
+            class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors"
+          >
+            notifications
+          </button>
+          <button
+            class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors"
+          >
+            help_outline
+          </button>
+          <div
+            class="h-8 w-8 rounded-full overflow-hidden bg-surface-container border border-outline-variant"
+          >
+            <img
+              alt="User profile avatar"
+              data-alt="professional corporate headshot of a logistics manager in a modern office setting"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZvCDklIFh8J8XxzqrR2Dl0F_ZFuw5raxmlmwrV9iz3I9aGeCjDV1vw2RRS3oLsyLvNnwem-hQvqC7uEp2WRt6aQKMqDDhXWc7gGjqTkKDqM_x4WUFDPJqxby9D1SQUYg7ajmbyMbK-ze5f8s4Zge95mIItDDeKx3TxFGZLOm1ugz9QP7O-GRNXtptcdcPxU-RjluaYLtnY8gO397SNDZf77uS-byZC8JMYnVkeCmhtnnd2tKvaGqtzIIxLwfmfibX3fjnR_Qm3gM"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="min-h-screen">
+      <!-- Hero Section -->
+      <section class="relative bg-primary px-6 py-24 overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-primary via-transparent to-primary z-10"
+          ></div>
+          <img
+            alt="Hero Background"
+            class="w-full h-full object-cover"
+            data-alt="dramatic wide shot of a massive container terminal at night with vibrant blue and orange lights reflecting on steel surfaces"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8jZ-A6ALoSSH6RbtAY7utc77SMDjZyJvJkavZWxsoKWZXxT0D1sqkzyHM6o7oonlZaswIZ7o6Xb_q0xCkWfRUWzQFIOR2qo4cXn_aJ3335Y06UWu7A3QUCOv4hw2rGMryuEIF_CBgH-U1-iMliszgOdALom_44zSqCr4o2TraxUncqqSggiLcXMdGSv3uhv0RTMvlIA1Pm-PkpbKw_LjkZR9yR6DhErFaJ4_u4eUrvaNeiZVdOnacANr-3ZTPHXAANNyC_k62z2o"
+          />
+        </div>
+        <div class="max-w-7xl mx-auto relative z-20 text-center">
+          <h1 class="font-h1 text-h1 text-white mb-6">
+            Maximize Every Cubic Meter
+          </h1>
+          <p
+            class="font-body-lg text-body-lg text-on-primary-container max-w-2xl mx-auto mb-12"
+          >
+            The world’s first high-precision freight sharing network. Eliminate
+            empty space, reduce carbon footprints, and optimize global container
+            utilization.
+          </p>
+          <!-- Search Bar -->
+          <div
+            class="max-w-4xl mx-auto bg-white rounded-xl shadow-2xl p-2 md:flex items-center gap-2"
+          >
+            <div
+              class="flex-1 flex items-center px-4 border-r border-slate-100 py-3"
+            >
+              <span
+                class="material-symbols-outlined text-on-surface-variant mr-3"
+                >location_on</span
+              >
+              <div class="text-left">
+                <label
+                  class="block font-label-caps text-label-caps text-on-surface-variant mb-1"
+                  >ORIGIN</label
+                >
+                <input
+                  class="w-full border-none p-0 focus:ring-0 text-primary font-semibold placeholder-slate-400"
+                  placeholder="Port, City, or ZIP"
+                  type="text"
+                />
+              </div>
+            </div>
+            <div
+              class="flex-1 flex items-center px-4 border-r border-slate-100 py-3"
+            >
+              <span
+                class="material-symbols-outlined text-on-surface-variant mr-3"
+                >farsight_digital</span
+              >
+              <div class="text-left">
+                <label
+                  class="block font-label-caps text-label-caps text-on-surface-variant mb-1"
+                  >DESTINATION</label
+                >
+                <input
+                  class="w-full border-none p-0 focus:ring-0 text-primary font-semibold placeholder-slate-400"
+                  placeholder="Port, City, or ZIP"
+                  type="text"
+                />
+              </div>
+            </div>
+            <div class="flex-1 flex items-center px-4 py-3">
+              <span
+                class="material-symbols-outlined text-on-surface-variant mr-3"
+                >calendar_today</span
+              >
+              <div class="text-left">
+                <label
+                  class="block font-label-caps text-label-caps text-on-surface-variant mb-1"
+                  >DEPARTURE</label
+                >
+                <input
+                  class="w-full border-none p-0 focus:ring-0 text-primary font-semibold"
+                  type="date"
+                />
+              </div>
+            </div>
+            <button
+              id="seachbox"
+              class="bg-secondary-container hover:bg-secondary text-white px-8 py-4 rounded-lg font-bold transition-all flex items-center justify-center gap-2 shrink-0">
+              <span class="material-symbols-outlined">search</span>
+              Search Logistics
+            </button>
+          </div>
+          <div class="mt-8 flex justify-center gap-4">
+            <button
+              class="bg-white/10 hover:bg-white/20 text-white backdrop-blur-md border border-white/20 px-6 py-3 rounded-full font-semibold transition-all flex items-center gap-2"
+            >
+              <span class="material-symbols-outlined">add_box</span>
+              Post Space
+            </button>
+            <button
+              class="bg-white/10 hover:bg-white/20 text-white backdrop-blur-md border border-white/20 px-6 py-3 rounded-full font-semibold transition-all flex items-center gap-2"
+            >
+              <span class="material-symbols-outlined">view_in_ar</span>
+              Find Space
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- Stats Section -->
+      <section class="max-w-7xl mx-auto px-6 -mt-12 relative z-30">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div
+            class="bg-white p-6 rounded-xl shadow-lg border border-slate-200 flex items-center gap-4"
+          >
+            <div
+              class="h-12 w-12 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary-container"
+            >
+              <span
+                class="material-symbols-outlined"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >package_2</span
+              >
+            </div>
+            <div>
+              <span class="block font-h2 text-h2 text-primary">12.4k</span>
+              <span
+                class="block font-label-caps text-label-caps text-on-surface-variant"
+                >TEUs SHARED TODAY</span
+              >
+            </div>
+          </div>
+          <div
+            class="bg-white p-6 rounded-xl shadow-lg border border-slate-200 flex items-center gap-4"
+          >
+            <div
+              class="h-12 w-12 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary-container"
+            >
+              <span
+                class="material-symbols-outlined"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >eco</span
+              >
+            </div>
+            <div>
+              <span class="block font-h2 text-h2 text-primary">840t</span>
+              <span
+                class="block font-label-caps text-label-caps text-on-surface-variant"
+                >CO2 EMISSIONS SAVED</span
+              >
+            </div>
+          </div>
+          <div
+            class="bg-white p-6 rounded-xl shadow-lg border border-slate-200 flex items-center gap-4"
+          >
+            <div
+              class="h-12 w-12 rounded-lg bg-surface-container-high flex items-center justify-center text-secondary-container"
+            >
+              <span
+                class="material-symbols-outlined"
+                style="font-variation-settings: &quot;FILL&quot; 1"
+                >trending_up</span
+              >
+            </div>
+            <div>
+              <span class="block font-h2 text-h2 text-primary">22%</span>
+              <span
+                class="block font-label-caps text-label-caps text-on-surface-variant"
+                >AVG COST REDUCTION</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Main Bento Content -->
+      <section class="max-w-7xl mx-auto px-6 py-20">
+        <div class="flex justify-between items-end mb-8">
+          <div>
+            <h2 class="font-h2 text-h2 text-primary mb-2">
+              Recent Opportunities
+            </h2>
+            <p class="text-on-surface-variant">
+              Live container space matching in your network
+            </p>
+          </div>
+          <button
+            class="text-secondary-container font-semibold flex items-center gap-1 hover:underline"
+          >
+            View all routes
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </button>
+        </div>
+        <div class="bento-grid">
+          <!-- Large Opportunity Card -->
+          <div
+            class="col-span-12 lg:col-span-8 bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm flex flex-col md:flex-row"
+          >
+            <div class="w-full md:w-1/2 relative h-64 md:h-auto">
+              <img
+                alt="Opportunity Image"
+                class="w-full h-full object-cover"
+                data-alt="high-angle shot of organized shipping containers on a freight ship with deep blue ocean water in background"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaksdZKpEl1D7jvOzQURgzE_VBAVQhMlnAx0bPDUP4ty7ECLcpHxGcIi6HRNfxxBwGcO6BdX67QjRFPogDqbVLqVW4Hk40vIn9LX7jhghyO21KCxFbuN0f7DknvFQ4n4Js5XMQ0s6FovXI2VqaKjrMTDDCTFe4V2YopmajpkU5OjLJJJc9z7wwcWwbbIMDf_oDX27gDvm5dFbDr1ZNrSzTKV-TFbNy2wsLchSR87EID7a938XMg1s9KCIpA1jMPDvQAV2JSyzg-_w"
+              />
+              <div
+                class="absolute top-4 left-4 bg-primary text-white text-[10px] px-3 py-1 rounded-full font-bold uppercase tracking-widest"
+              >
+                Priority Route
+              </div>
+            </div>
+            <div class="w-full md:w-1/2 p-8 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center gap-2 mb-4">
+                  <span
+                    class="font-label-caps text-label-caps text-secondary-container"
+                    >SHANGHAI</span
+                  >
+                  <span class="material-symbols-outlined text-slate-300"
+                    >trending_flat</span
+                  >
+                  <span
+                    class="font-label-caps text-label-caps text-secondary-container"
+                    >ROTTERDAM</span
+                  >
+                </div>
+                <h3 class="font-h3 text-h3 text-primary mb-2">
+                  Maersk Enterprise • Voyage 402
+                </h3>
+                <p class="text-body-sm text-on-surface-variant mb-6">
+                  40ft High-Cube space available for dry goods. Direct sailing,
+                  22 days transit time.
+                </p>
+                <div class="mb-8">
+                  <div class="flex justify-between items-end mb-2">
+                    <span
+                      class="font-status-label text-status-label text-primary"
+                      >CAPACITY FILLED</span
+                    >
+                    <span class="font-data-mono text-data-mono text-primary"
+                      >78%</span
+                    >
+                  </div>
+                  <div
+                    class="w-full h-3 bg-slate-100 rounded-full overflow-hidden"
+                  >
+                    <div class="h-full bg-secondary-container w-[78%]"></div>
+                  </div>
+                  <span class="block mt-2 text-[11px] text-on-surface-variant"
+                    >Available: 8.5 m³ / 4,200kg</span
+                  >
+                </div>
+              </div>
+              <button
+                class="w-full bg-primary text-white font-bold py-3 rounded-lg hover:opacity-90 transition-all"
+              >
+                Claim Remaining Space
+              </button>
+            </div>
+          </div>
+          <!-- Medium Card 1 -->
+          <div
+            class="col-span-12 md:col-span-6 lg:col-span-4 bg-white border border-slate-200 rounded-xl p-6 shadow-sm flex flex-col justify-between"
+          >
+            <div>
+              <div class="flex justify-between items-start mb-6">
+                <div
+                  class="h-10 w-10 bg-slate-50 rounded-lg flex items-center justify-center border border-slate-100"
+                >
+                  <span class="material-symbols-outlined text-primary"
+                    >hub</span
+                  >
+                </div>
+                <span
+                  class="bg-on-tertiary-container text-white text-[10px] px-2 py-1 rounded"
+                  >FASTEST</span
+                >
+              </div>
+              <div class="space-y-4 mb-8">
+                <div class="flex items-center gap-4">
+                  <div class="flex flex-col items-center">
+                    <div
+                      class="h-2 w-2 rounded-full bg-secondary-container"
+                    ></div>
+                    <div class="w-px h-8 bg-slate-200 my-1"></div>
+                    <div
+                      class="h-2 w-2 rounded-full border-2 border-slate-300"
+                    ></div>
+                  </div>
+                  <div class="flex flex-col justify-between h-14">
+                    <span class="font-bold text-sm">Long Beach, USA</span>
+                    <span class="font-bold text-sm">Tokyo, JPN</span>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-6">
+                <div class="flex justify-between items-end mb-2">
+                  <span class="font-status-label text-status-label text-primary"
+                    >UTILIZATION</span
+                  >
+                  <span class="font-data-mono text-data-mono text-primary"
+                    >45%</span
+                  >
+                </div>
+                <div
+                  class="w-full h-2 bg-slate-100 rounded-full overflow-hidden"
+                >
+                  <div class="h-full bg-secondary-container w-[45%]"></div>
+                </div>
+              </div>
+            </div>
+            <button
+              class="w-full border border-primary text-primary font-bold py-2 rounded-lg hover:bg-slate-50 transition-all"
+            >
+              Details
+            </button>
+          </div>
+          <!-- Small Info Cards -->
+          <div
+            class="col-span-12 md:col-span-6 lg:col-span-4 bg-secondary-container text-white rounded-xl p-6 shadow-sm"
+          >
+            <span class="material-symbols-outlined mb-4" style="font-size: 32px"
+              >bolt</span
+            >
+            <h3 class="font-h3 text-h3 mb-2">Post in 60s</h3>
+            <p class="text-sm opacity-90 mb-6">
+              Have excess container space? List it instantly and let our AI
+              match you with verified shippers.
+            </p>
+            <button
+              class="bg-white text-secondary-container px-4 py-2 rounded-lg font-bold text-sm"
+            >
+              Start Posting
+            </button>
+          </div>
+          <div
+            class="col-span-12 md:col-span-6 lg:col-span-4 bg-primary text-white rounded-xl p-6 shadow-sm flex flex-col justify-between overflow-hidden relative"
+          >
+            <div class="relative z-10">
+              <span
+                class="material-symbols-outlined mb-4"
+                style="font-size: 32px"
+                >analytics</span
+              >
+              <h3 class="font-h3 text-h3 mb-2">Live Analytics</h3>
+              <p class="text-sm opacity-90">
+                Real-time freight rates and lane availability updated every 15
+                minutes.
+              </p>
+            </div>
+            <div class="absolute bottom-0 right-0 opacity-10 scale-150">
+              <span class="material-symbols-outlined" style="font-size: 120px"
+                >query_stats</span
+              >
+            </div>
+            <button
+              class="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 px-4 py-2 rounded-lg font-bold text-sm w-fit relative z-10"
+            >
+              View Dashboard
+            </button>
+          </div>
+          <!-- Last Opp Card -->
+          <div
+            class="col-span-12 md:col-span-6 lg:col-span-4 bg-white border border-slate-200 rounded-xl p-6 shadow-sm flex flex-col justify-between"
+          >
+            <div>
+              <div class="flex justify-between items-start mb-6">
+                <div
+                  class="h-10 w-10 bg-slate-50 rounded-lg flex items-center justify-center border border-slate-100"
+                >
+                  <span class="material-symbols-outlined text-primary"
+                    >warehouse</span
+                  >
+                </div>
+                <span
+                  class="bg-slate-100 text-slate-600 text-[10px] px-2 py-1 rounded"
+                  >COLD CHAIN</span
+                >
+              </div>
+              <div class="flex flex-col gap-1 mb-6">
+                <span
+                  class="font-label-caps text-label-caps text-on-surface-variant"
+                  >SINGAPORE TO SYDNEY</span
+                >
+                <span class="font-bold text-lg">Reefer Container RF-99</span>
+              </div>
+              <div class="mb-6">
+                <div class="flex justify-between items-end mb-2">
+                  <span class="font-status-label text-status-label text-primary"
+                    >CAPACITY FILLED</span
+                  >
+                  <span class="font-data-mono text-data-mono text-primary"
+                    >92%</span
+                  >
+                </div>
+                <div
+                  class="w-full h-2 bg-slate-100 rounded-full overflow-hidden"
+                >
+                  <div class="h-full bg-secondary-container w-[92%]"></div>
+                </div>
+              </div>
+            </div>
+            <button
+              class="w-full border border-primary text-primary font-bold py-2 rounded-lg hover:bg-slate-50 transition-all"
+            >
+              Last Spot
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- Trust Section -->
+      <section class="bg-surface-container-low py-20 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+          <span
+            class="font-label-caps text-label-caps text-on-surface-variant mb-4 block"
+            >TRUSTED BY GLOBAL LEADERS</span
+          >
+          <div
+            class="flex flex-wrap justify-center items-center gap-12 opacity-40 grayscale"
+          >
+            <span class="font-h2 text-h2 tracking-tighter">MAERSK</span>
+            <span class="font-h2 text-h2 tracking-tighter">COSCO</span>
+            <span class="font-h2 text-h2 tracking-tighter">HAPAG-LLOYD</span>
+            <span class="font-h2 text-h2 tracking-tighter">MSC</span>
+            <span class="font-h2 text-h2 tracking-tighter">ONE</span>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- BottomNavBar (Mobile Only) -->
+    <nav
+      class="lg:hidden fixed bottom-0 left-0 w-full z-50 bg-white dark:bg-slate-900 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] border-t border-slate-200 dark:border-slate-800 flex justify-around items-center h-16 pb-safe px-4"
+    >
+      <a
+        class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all"
+        href="#"
+      >
+        <span class="material-symbols-outlined">home</span>
+        <span class="font-['Inter'] text-[10px] font-medium">Home</span>
+      </a>
+      <a
+        class="flex flex-col items-center justify-center text-orange-600 font-bold hover:bg-slate-50 dark:hover:bg-slate-800 transition-all"
+        href="#"
+      >
+        <span class="material-symbols-outlined">search</span>
+        <span class="font-['Inter'] text-[10px] font-medium">Search</span>
+      </a>
+      <a
+        class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all"
+        href="#"
+      >
+        <span class="material-symbols-outlined">add_circle</span>
+        <span class="font-['Inter'] text-[10px] font-medium">Post</span>
+      </a>
+      <a
+        class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all"
+        href="#"
+      >
+        <span class="material-symbols-outlined">person</span>
+        <span class="font-['Inter'] text-[10px] font-medium">Profile</span>
+      </a>
+    </nav>
+    <!-- Footer -->
+    <footer
+      class="bg-primary-container text-on-primary-container py-16 px-6 border-t border-slate-800"
+    >
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div class="col-span-1 md:col-span-2">
+          <span
+            class="text-xl font-black text-white tracking-tighter block mb-6"
+            >CoLoad Logistics</span
+          >
+          <p class="max-w-sm mb-8">
+            Revolutionizing global trade through intelligent capacity sharing.
+            Join the network that's making logistics more efficient and
+            sustainable.
+          </p>
+          <div class="flex gap-4">
+            <div
+              class="h-10 w-10 bg-white/5 rounded flex items-center justify-center hover:bg-white/10 cursor-pointer transition-all"
+            >
+              <img
+                alt="Social"
+                class="w-5 h-5 opacity-80"
+                data-alt="minimalist white icon representing global networking on a dark background"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLZy_exYSjwxiU8CZPq6xC-QmxmOfxex_IdJ_y4-sz-a7iM_K-80F48wxJdm7YCPJBx5LAcbSPxmKRhgYFpGY8oaULgylusnAYyhXgKJivrjZlzciwW1RPa2QzaUM6KTLuS3FoJ3NXLgiQxSgAoxHEeJYDbchKEwpeLkQ9n9RJwtKFBmqcDdhuFZL34D8C5v2hBqZ1p2U2pmOZTiPeUs1PFt11Gh3CY9cZqPULVotjXef_2Eu4T1z-bw77w3ZoRz1vHnnL7BZmL0w"
+              />
+            </div>
+            <div
+              class="h-10 w-10 bg-white/5 rounded flex items-center justify-center hover:bg-white/10 cursor-pointer transition-all"
+            >
+              <img
+                alt="Social"
+                class="w-5 h-5 opacity-80"
+                data-alt="clean vector style social media logo with geometric shapes"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNhxRkOOlWCxUOL-O_asgaY2-KZloyZXFdEmYH6AJnkFzvRTmg_ypwkiUHm6CaD7pKTe_dmWl6yeRCZznrL8JRJR0XDBxf3TNZe9vbLMG7cnGNUIWuoXWMflSemyqx4JVpr_xgODB4TJYQgr9AcrowhotK3PXEBpez862G7nbJFm2z53S-YwEfDDMBUvXkIoWuwFE4TqmgTAp1oZVqsMUe97aR1J0WNomZmWmMgB5dIn4Aa1LiNxrmk3wUdCSImYX4vG-FzrunUL0"
+              />
+            </div>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-bold text-white mb-6">Platform</h4>
+          <ul class="space-y-4 text-sm">
+            <li>
+              <a class="hover:text-white transition-colors" href="#"
+                >Find Space</a
+              >
+            </li>
+            <li>
+              <a class="hover:text-white transition-colors" href="#"
+                >Post Freight</a
+              >
+            </li>
+            <li>
+              <a class="hover:text-white transition-colors" href="#"
+                >Route Map</a
+              >
+            </li>
+            <li>
+              <a class="hover:text-white transition-colors" href="#">Pricing</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold text-white mb-6">Company</h4>
+          <ul class="space-y-4 text-sm">
+            <li>
+              <a class="hover:text-white transition-colors" href="#"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a class="hover:text-white transition-colors" href="#"
+                >Sustainability</a
+              >
+            </li>
+            <li>
+              <a class="hover:text-white transition-colors" href="#"
+                >Contact Support</a
+              >
+            </li>
+            <li>
+              <a class="hover:text-white transition-colors" href="#"
+                >Legal &amp; Privacy</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/5 flex flex-col md:row justify-between text-xs opacity-50"
+      >
+        <span>© 2024 CoLoad Logistics. All rights reserved.</span>
+        <div class="flex gap-6 mt-4 md:mt-0">
+          <span>Terms of Service</span>
+          <span>Privacy Policy</span>
+          <span>Cookie Settings</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

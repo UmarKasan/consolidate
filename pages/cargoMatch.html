@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CoLoad Logistics | Search Results</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "background": "#f8f9ff",
+                    "secondary-fixed": "#ffdbcc",
+                    "on-error": "#ffffff",
+                    "secondary-container": "#fe6b00",
+                    "on-error-container": "#93000a",
+                    "tertiary-fixed-dim": "#5ddacb",
+                    "secondary-fixed-dim": "#ffb693",
+                    "outline": "#74777d",
+                    "on-secondary-fixed": "#351000",
+                    "primary-fixed-dim": "#b7c8de",
+                    "surface-tint": "#4f6073",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#001916",
+                    "surface-container-high": "#dce9ff",
+                    "on-tertiary-fixed-variant": "#005049",
+                    "on-secondary-fixed-variant": "#7a3000",
+                    "on-primary-fixed-variant": "#38485a",
+                    "surface-container-low": "#eff4ff",
+                    "secondary": "#a04100",
+                    "on-primary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-background": "#0b1c30",
+                    "error-container": "#ffdad6",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-container": "#e5eeff",
+                    "outline-variant": "#c4c6cd",
+                    "on-tertiary-fixed": "#00201d",
+                    "on-surface": "#0b1c30",
+                    "tertiary-container": "#00302b",
+                    "surface-dim": "#cbdbf5",
+                    "surface": "#f8f9ff",
+                    "tertiary-fixed": "#7cf6e7",
+                    "error": "#ba1a1a",
+                    "primary-fixed": "#d2e4fb",
+                    "primary": "#041627",
+                    "surface-bright": "#f8f9ff",
+                    "surface-variant": "#d3e4fe",
+                    "on-secondary-container": "#572000",
+                    "inverse-primary": "#b7c8de",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-surface-variant": "#44474c",
+                    "on-secondary": "#ffffff",
+                    "on-primary-container": "#8192a7",
+                    "on-tertiary-container": "#00a396",
+                    "primary-container": "#1a2b3c",
+                    "inverse-surface": "#213145",
+                    "on-primary-fixed": "#0b1d2d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "sm": "1rem",
+                    "xl": "3rem",
+                    "base": "4px",
+                    "margin": "2rem",
+                    "gutter": "1.5rem",
+                    "xs": "0.5rem",
+                    "md": "1.5rem",
+                    "lg": "2rem"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "data-mono": ["Inter"],
+                    "status-label": ["Inter"],
+                    "h1": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "h3": ["Inter"],
+                    "h2": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                    "data-mono": ["14px", {"lineHeight": "1", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                    "status-label": ["12px", {"lineHeight": "1", "letterSpacing": "0", "fontWeight": "600"}],
+                    "h1": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
+                    "h3": ["20px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600"}],
+                    "h2": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: #f8f9ff; }
+    </style>
+</head>
+<body class="text-on-background">
+<!-- TopNavBar (Large) -->
+<nav class="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shadow-sm flex justify-between items-center w-full px-6 h-16 fixed top-0 z-50">
+<div class="flex items-center gap-8">
+<span class="text-xl font-black text-[#1A2B3C] dark:text-white tracking-tighter">CoLoad Logistics</span>
+<nav class="hidden md:flex items-center gap-6 h-full font-['Inter'] text-sm font-medium tracking-tight">
+<a class="text-orange-600 dark:text-orange-500 font-bold border-b-2 border-orange-600 h-full flex items-center px-1" href="#">Cargo Owner</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 h-full flex items-center px-1" href="#">Container Owner</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">search</span>
+<input class="pl-10 pr-4 py-1.5 bg-slate-50 border border-slate-200 rounded text-sm focus:ring-2 focus:ring-secondary-container outline-none w-64" placeholder="Search postings..." type="text"/>
+</div>
+<button class="text-slate-600 dark:text-slate-400 p-2 rounded-full hover:bg-slate-100"><span class="material-symbols-outlined">notifications</span></button>
+<button class="text-slate-600 dark:text-slate-400 p-2 rounded-full hover:bg-slate-100"><span class="material-symbols-outlined">help_outline</span></button>
+<img alt="User profile avatar" class="w-8 h-8 rounded-full border border-slate-200" data-alt="professional male logistics manager portrait, clean background, corporate headshot style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBqegO7qr2xE8kRyt25IQsRbSj7M_sZPWb9uIWUhAI2OUp-BjsYe1u8vM7vuWEDmXaIo4hglxEHGxpO7WpDg2DjM3pLwA0DecCMrBTEqicZx6wSmE8xe-QUqXABkLi1sXSGxDBEIGsFlkEMxySI4ddyoUKni7PfUv0bU8vy6jAvN-eZQUlWopKPHzhB4mdoS6Whoo511MPLXU2Zn64Qb7m46Mhg_HC8TLKNTniwTeZ0vs30pesl3vYe-nHlB_cKfenvWhdgtYp1NY"/>
+</div>
+</nav>
+<div class="flex min-h-screen pt-16">
+<!-- SideNavBar (Desktop Only) -->
+<aside class="hidden lg:flex flex-col h-screen sticky top-16 bg-slate-50 dark:bg-slate-950 border-r border-slate-200 dark:border-slate-800 w-64 p-6 shrink-0">
+<div class="mb-8">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 bg-primary-container rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-white">hub</span>
+</div>
+<div>
+<p class="text-lg font-bold text-orange-600 leading-tight">Global Freight</p>
+<p class="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Standard Account</p>
+</div>
+</div>
+<button class="w-full bg-secondary-container text-white py-3 rounded font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 shadow-sm hover:bg-secondary-container/90 transition-all">
+<span class="material-symbols-outlined text-sm">add</span> New Shipment
+                </button>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 p-3 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:pl-2 transition-all duration-200 cursor-pointer rounded">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-['Inter'] text-xs font-bold uppercase tracking-wider">Overview</span>
+</a>
+<a class="flex items-center gap-3 p-3 bg-white dark:bg-slate-900 text-orange-600 shadow-sm border-l-4 border-orange-600 cursor-pointer rounded">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-['Inter'] text-xs font-bold uppercase tracking-wider">My Shipments</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:pl-2 transition-all duration-200 cursor-pointer rounded">
+<span class="material-symbols-outlined">view_in_ar</span>
+<span class="font-['Inter'] text-xs font-bold uppercase tracking-wider">Container Planner</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:pl-2 transition-all duration-200 cursor-pointer rounded">
+<span class="material-symbols-outlined">hub</span>
+<span class="font-['Inter'] text-xs font-bold uppercase tracking-wider">Network</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:pl-2 transition-all duration-200 cursor-pointer rounded">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-['Inter'] text-xs font-bold uppercase tracking-wider">Settings</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-slate-200 pt-4">
+<a class="flex items-center gap-3 p-3 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all cursor-pointer rounded">
+<span class="material-symbols-outlined">contact_support</span>
+<span class="font-['Inter'] text-xs font-bold uppercase tracking-wider">Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-6 lg:p-8 overflow-y-auto pb-24">
+<header class="mb-8">
+<div class="flex items-center gap-2 text-slate-500 text-sm mb-2">
+<span>Search</span> <span class="material-symbols-outlined text-xs">chevron_right</span> <span>Container Space</span> <span class="material-symbols-outlined text-xs">chevron_right</span> <span>Results</span>
+</div>
+<h1 class="font-h1 text-h1 text-primary mb-2">Matching Postings</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Found 3 matching spaces for your <span class="font-bold">4.5 CBM / 2,100 KG</span> general cargo from <span class="font-bold">Shanghai (CNSHA)</span> to <span class="font-bold">Rotterdam (NLRTM)</span>.</p>
+</header>
+<!-- Best Match Highlight -->
+<section class="mb-10">
+<div class="relative overflow-hidden bg-primary-container rounded-xl shadow-lg border border-primary-container p-6 lg:p-8 flex flex-col md:flex-row gap-8">
+<!-- Background texture/decoration -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-secondary-container/10 blur-3xl -mr-20 -mt-20 rounded-full"></div>
+<div class="flex-1 relative z-10">
+<div class="flex items-center gap-3 mb-4">
+<span class="bg-secondary-container text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">stars</span> Best Match
+                            </span>
+<span class="text-tertiary-fixed-dim font-status-label text-status-label">98% Efficient Pairing</span>
+</div>
+<h2 class="font-h2 text-h2 text-white mb-4">Direct Carrier Space - Maersk Triple-E</h2>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+<div>
+<p class="text-slate-400 font-label-caps text-label-caps mb-1">DEPARTURE</p>
+<p class="text-white font-body-md font-bold">Oct 24, 2023</p>
+</div>
+<div>
+<p class="text-slate-400 font-label-caps text-label-caps mb-1">AVAILABLE SPACE</p>
+<p class="text-white font-body-md font-bold">12.5 CBM Remaining</p>
+</div>
+<div>
+<p class="text-slate-400 font-label-caps text-label-caps mb-1">EST. TRANSIT</p>
+<p class="text-white font-body-md font-bold">32 Days</p>
+</div>
+<div>
+<p class="text-slate-400 font-label-caps text-label-caps mb-1">RATING</p>
+<div class="flex text-secondary-fixed">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-4">
+<button class="bg-secondary-container hover:bg-secondary-container/90 text-white px-8 py-3 rounded-xl font-bold transition-all flex items-center gap-2">
+                                Request Booking <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="bg-white/10 hover:bg-white/20 text-white px-8 py-3 rounded-xl font-bold border border-white/20 transition-all">
+                                View Details
+                            </button>
+</div>
+</div>
+<div class="w-full md:w-80 h-56 md:h-auto rounded-xl overflow-hidden relative border border-white/10 shrink-0">
+<img alt="Vessel visual" class="w-full h-full object-cover" data-alt="massive container ship at sea during sunset, glowing horizon, industrial orange and deep navy blue tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeI7U99f8BAyyg-BZ8PifRns14EwLDqcPrrrXv5S-Mp26VPNNqYZ39ewxGweyBKZc2K9gZepWvbFe7zaO3kZYwTQaKJ8ufgOR4TFfqExFJvWN8E2zc28SwfPcbkV8ocgGNg0Skk8ZomauBsVAahKNRPqshV8cHLgPzGRQCTrxM2wS2KlKwUoMPNc4s4jaYw7JSsPVkQXaEj6YITibYDnHT5NctX462QU3D9opC53sHu3Or4QB1kkA4kp07wVkPcLgQgaPrlVwhwnw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container/80 to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<p class="text-white font-bold text-sm">Vessel: Northern Empress</p>
+<p class="text-slate-300 text-xs">IMO: 9443522</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Other Matches -->
+<h3 class="font-h3 text-h3 text-primary mb-6">Alternative Options</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-md transition-shadow p-6 flex flex-col">
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center gap-3">
+<img alt="Forwarder logo" class="w-10 h-10 rounded border border-slate-100" data-alt="minimalist company logo icon for a freight forwarder, geometric shapes, professional blue color" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATwrF0yU4R-UQLCjZcwM-egbaos1Y-WpOaHErPAW479tIEN78f2p03Oe_4sFZDyR-HvaywqOiIZSJxCoIGw4GyIK-f2n3px9ZTEu1N3wsN4Q5A2H2ZAYAmt4mrKEsTtyk3rt93_7n0duDBYsIhylaJJAEcWN2v9_9BNceYlwXkPeGmiSaXFc_MMK7GuaEYKXPBa_9Po1bS0Bwi55w6RnmLsUD9m3oCfYLU68DDluQl0iculA4J5xUUH2HRcSrGtjL5eWDfeUWA1yw"/>
+<div>
+<h4 class="font-bold text-sm text-primary">BlueWave Forwarding</h4>
+<p class="text-xs text-slate-500">Verified Partner</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-lg font-black text-primary">$1,250</p>
+<p class="text-[10px] text-slate-400 font-bold uppercase">All-in Price</p>
+</div>
+</div>
+<div class="space-y-4 mb-6 flex-1">
+<div class="flex items-center justify-between text-sm">
+<span class="text-slate-500 flex items-center gap-1"><span class="material-symbols-outlined text-xs">calendar_today</span> ETD</span>
+<span class="font-bold">Oct 28, 2023</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="text-slate-500 flex items-center gap-1"><span class="material-symbols-outlined text-xs">view_in_ar</span> Capacity</span>
+<span class="font-bold">8.0 CBM Open</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="text-slate-500 flex items-center gap-1"><span class="material-symbols-outlined text-xs">timer</span> Transit</span>
+<span class="font-bold text-teal-600">30 Days (Fast)</span>
+</div>
+</div>
+<button class="w-full border-2 border-primary text-primary py-2.5 rounded-xl font-bold text-sm hover:bg-primary hover:text-white transition-all">
+                        Connect with Forwarder
+                    </button>
+</div>
+<!-- Card 2 -->
+<div class="bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-md transition-shadow p-6 flex flex-col">
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center gap-3">
+<img alt="Forwarder logo" class="w-10 h-10 rounded border border-slate-100" data-alt="corporate building logo symbol, professional clean architecture, navy blue palette" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFs9YDzUFBXQTPHsSGJsy5WQING9QqVAu9Z-l8J1EbbNatF9HOw3RlNlAe67mO3qaagOjegfE7hLuJ1MSkBrZqDRWaexrKuCwuVxKekQ5aHLI1KJyXVD5WeD71lR-48KGSTBW1Rnaa3m7O9tS4CenXuK6iJqLmUY1A_rmzcpydRZ2JKkf4JqMogP9axO7Xst31T48fKTFlGbgN-eTCT4L_ncz7DrfTunW5HZXFCSaDyNw2cwcXmOltLQy7JPMSwpvxcDNmP6XJZ-E"/>
+<div>
+<h4 class="font-bold text-sm text-primary">TransGlobal LCL</h4>
+<p class="text-xs text-slate-500">Premium Member</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-lg font-black text-primary">$1,100</p>
+<p class="text-[10px] text-slate-400 font-bold uppercase">All-in Price</p>
+</div>
+</div>
+<div class="space-y-4 mb-6 flex-1">
+<div class="flex items-center justify-between text-sm">
+<span class="text-slate-500 flex items-center gap-1"><span class="material-symbols-outlined text-xs">calendar_today</span> ETD</span>
+<span class="font-bold">Nov 02, 2023</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="text-slate-500 flex items-center gap-1"><span class="material-symbols-outlined text-xs">view_in_ar</span> Capacity</span>
+<span class="font-bold">25.0 CBM Open</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="text-slate-500 flex items-center gap-1"><span class="material-symbols-outlined text-xs">timer</span> Transit</span>
+<span class="font-bold">38 Days</span>
+</div>
+</div>
+<button class="w-full border-2 border-primary text-primary py-2.5 rounded-xl font-bold text-sm hover:bg-primary hover:text-white transition-all">
+                        Connect with Forwarder
+                    </button>
+</div>
+<!-- Card 3 - Placeholder/Ad -->
+<div class="bg-slate-100 border-2 border-dashed border-slate-300 rounded-xl p-6 flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-slate-400 text-4xl mb-4">notifications_active</span>
+<h4 class="font-bold text-primary mb-2">No more exact matches?</h4>
+<p class="text-xs text-slate-500 mb-6">Set up an alert to be notified when new space becomes available on this route.</p>
+<button class="bg-white border border-slate-300 px-6 py-2 rounded-lg text-xs font-bold shadow-sm">Notify Me</button>
+</div>
+</div>
+<!-- Detailed Requirements Summary (Bento Style) -->
+<div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="md:col-span-2 bg-white border border-slate-200 rounded-xl p-6">
+<div class="flex items-center justify-between mb-4">
+<h4 class="font-bold text-sm uppercase tracking-wider text-slate-500">Route Map Overview</h4>
+<span class="text-xs text-primary font-bold">Shanghai <span class="material-symbols-outlined text-xs align-middle">arrow_forward</span> Rotterdam</span>
+</div>
+<div class="h-48 bg-slate-200 rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover opacity-50 grayscale" data-alt="clean political map of the world with subtle grid lines and elegant dark blue and white tones" data-location="Pacific Ocean" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA596Ivo3iCdZ8lKM7J6IxtFC49vT44ggz3IOLZYHXG7y8v2sGJH1M3mzALNDKED3Y9qbm38mbDSaoFy9aTY6rzi6PTkZPKcjkOKbl8nFAUEjgG3IYJ99W0ga43abthgnRChNz_bAayF8zxdXyVcb4XFIxGPBCVfZINA6_SMuzEF_-5usEcASinol_tZ1crKCjadTgHEtQ9O607ar4s9ZlA7rFTfaTJ1OiXsjT5cN9iF1vLxqacFLWBiKbqUdLsZPjfipd5gvnMcNU"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-full h-0.5 bg-orange-400/30 relative">
+<div class="absolute left-1/4 w-3 h-3 bg-orange-600 rounded-full border-2 border-white -mt-1 shadow-md"></div>
+<div class="absolute right-1/4 w-3 h-3 bg-orange-600 rounded-full border-2 border-white -mt-1 shadow-md"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-primary-container text-white rounded-xl p-6 flex flex-col justify-between">
+<div>
+<h4 class="font-bold text-sm uppercase tracking-wider text-slate-400 mb-4">Your Search Params</h4>
+<ul class="space-y-3">
+<li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-sm">package</span> 4.5 CBM / 2,100 KG</li>
+<li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-sm">category</span> General Cargo</li>
+<li class="flex items-center gap-2 text-sm"><span class="material-symbols-outlined text-sm">verified_user</span> Insurance Required</li>
+</ul>
+</div>
+<button class="w-full bg-white/10 hover:bg-white/20 py-2 rounded font-bold text-xs mt-6 transition-all">Edit Search</button>
+</div>
+</div>
+</main>
+</div>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="lg:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 pb-safe px-4 bg-white dark:bg-slate-900 rounded-t-xl border-t border-slate-200 dark:border-slate-800 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Inter'] text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-orange-600 font-bold active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">search</span>
+<span class="font-['Inter'] text-[10px] font-medium">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">add_circle</span>
+<span class="font-['Inter'] text-[10px] font-medium">Post</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Inter'] text-[10px] font-medium">Profile</span>
+</a>
+</nav>
+</body></html>
