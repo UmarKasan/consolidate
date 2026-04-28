@@ -123,11 +123,11 @@
 <body class="bg-background font-body-md text-on-background min-h-screen">
 <!-- TopNavBar -->
 <header class="flex items-center justify-between px-6 h-16 w-full sticky top-0 z-50 bg-white dark:bg-slate-900 shadow-sm border-b border-slate-200 dark:border-slate-800">
-<div class="flex items-center gap-8">
+<div class="flex items-center gap-8 h-full">
 <span class="text-xl font-black text-slate-900 dark:text-white tracking-tighter">LogiFlow Global</span>
-<nav class="hidden md:flex items-center gap-6">
-<a class="font-['Inter'] text-sm tracking-tight text-orange-600 dark:text-orange-500 font-bold border-b-2 border-orange-600 pb-1" href="#">Cargo Owner</a>
-<a class="font-['Inter'] text-sm tracking-tight text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 transition-colors" href="#">Container Owner</a>
+<nav class="hidden md:flex items-center gap-6 hidden md:flex items-center gap-6 h-full font-['Inter'] text-sm font-medium tracking-tight">
+<a class="text-orange-600 dark:text-orange-500 font-bold border-b-2 border-orange-600 h-full flex items-center px-1" href="#">Cargo Owner</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 h-full flex items-center px-1" href="containerDashboard.html">Container Owner</a>
 </nav>
 </div>
 <div class="flex items-center gap-4">
@@ -160,17 +160,17 @@
 </div>
 </div>
 <nav class="flex-1 flex flex-col gap-1">
-<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 px-3 py-2 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 hover:text-slate-900 dark:hover:text-white transition-all duration-200 ease-in-out" href="#">
+<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 px-3 py-2 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 hover:text-slate-900 dark:hover:text-white transition-all duration-200 ease-in-out" href="cargoDashboard.html">
 <span class="material-symbols-outlined">dashboard</span>
 <span class="font-['Inter'] text-sm font-semibold">Dashboard</span>
 </a>
 <a class="flex items-center gap-3 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-md shadow-sm px-3 py-2 border border-slate-200 dark:border-slate-700 transition-all duration-200 ease-in-out" href="#">
 <span class="material-symbols-outlined">local_shipping</span>
-<span class="font-['Inter'] text-sm font-semibold">Shipments</span>
+<span class="font-['Inter'] text-sm font-semibold">Status</span>
 </a>
 <a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 px-3 py-2 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 hover:text-slate-900 dark:hover:text-white transition-all duration-200 ease-in-out" href="#">
 <span class="material-symbols-outlined">inventory_2</span>
-<span class="font-['Inter'] text-sm font-semibold">Inventory</span>
+<span class="font-['Inter'] text-sm font-semibold">Cargo</span>
 </a>
 <a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 px-3 py-2 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 hover:text-slate-900 dark:hover:text-white transition-all duration-200 ease-in-out" href="#">
 <span class="material-symbols-outlined">bar_chart</span>
