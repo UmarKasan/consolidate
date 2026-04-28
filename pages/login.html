@@ -112,6 +112,14 @@
             }
         }
     </script>
+    <script>
+        const users = [
+      { email: "alice@example.com", password: "alice123" },
+      { email: "bob@example.com",   password: "bob456" },
+      { email: "carol@example.com", password: "carol789" }
+    ];
+    localStorage.setItem("allUsers", JSON.stringify(users));
+    </script>
     <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
