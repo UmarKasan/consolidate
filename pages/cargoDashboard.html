@@ -1,387 +1,516 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "primary-fixed": "#d2e4fb",
-                    "surface-container-high": "#dce9ff",
-                    "outline": "#74777d",
-                    "on-secondary-fixed": "#351000",
-                    "error": "#ba1a1a",
-                    "surface-container": "#e5eeff",
-                    "on-tertiary-container": "#00a396",
-                    "primary": "#041627",
-                    "background": "#f8f9ff",
-                    "on-primary": "#ffffff",
-                    "outline-variant": "#c4c6cd",
-                    "error-container": "#ffdad6",
-                    "surface-container-highest": "#d3e4fe",
-                    "on-surface": "#0b1c30",
-                    "secondary-fixed": "#ffdbcc",
-                    "surface-bright": "#f8f9ff",
-                    "tertiary": "#001916",
-                    "on-primary-fixed-variant": "#38485a",
-                    "on-error-container": "#93000a",
-                    "surface-container-low": "#eff4ff",
-                    "on-surface-variant": "#44474c",
-                    "tertiary-container": "#00302b",
-                    "secondary": "#a04100",
-                    "tertiary-fixed": "#7cf6e7",
-                    "inverse-primary": "#b7c8de",
-                    "on-primary-container": "#8192a7",
-                    "on-error": "#ffffff",
-                    "inverse-on-surface": "#eaf1ff",
-                    "secondary-fixed-dim": "#ffb693",
-                    "on-secondary-fixed-variant": "#7a3000",
-                    "on-primary-fixed": "#0b1d2d",
-                    "surface": "#f8f9ff",
-                    "tertiary-fixed-dim": "#5ddacb",
-                    "on-tertiary-fixed-variant": "#005049",
-                    "inverse-surface": "#213145",
-                    "primary-fixed-dim": "#b7c8de",
-                    "on-tertiary": "#ffffff",
-                    "surface-tint": "#4f6073",
-                    "surface-container-lowest": "#ffffff",
-                    "on-secondary": "#ffffff",
-                    "on-tertiary-fixed": "#00201d",
-                    "primary-container": "#1a2b3c",
-                    "on-secondary-container": "#572000",
-                    "surface-variant": "#d3e4fe",
-                    "on-background": "#0b1c30",
-                    "surface-dim": "#cbdbf5",
-                    "secondary-container": "#fe6b00"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.125rem",
-                    "lg": "0.25rem",
-                    "xl": "0.5rem",
-                    "full": "0.75rem"
-            },
-            "spacing": {
-                    "gutter": "1.5rem",
-                    "base": "4px",
-                    "lg": "2rem",
-                    "sm": "1rem",
-                    "margin": "2rem",
-                    "xl": "3rem",
-                    "xs": "0.5rem",
-                    "md": "1.5rem"
-            },
-            "fontFamily": {
-                    "h1": ["Inter"], "status-label": ["Inter"], "label-caps": ["Inter"], "body-lg": ["Inter"], "h3": ["Inter"], "h2": ["Inter"], "data-mono": ["Inter"], "body-md": ["Inter"], "body-sm": ["Inter"]
-            },
-            "fontSize": {
-                    "h1": ["36px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                    "status-label": ["12px", {"lineHeight": "1", "letterSpacing": "0", "fontWeight": "600"}],
-                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
-                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
-                    "h3": ["20px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600"}],
-                    "h2": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
-                    "data-mono": ["14px", {"lineHeight": "1", "letterSpacing": "-0.01em", "fontWeight": "500"}],
-                    "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}],
-                    "body-sm": ["14px", {"lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400"}]
-            }
-          },
-        },
-      }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 1.5rem;
-        }
-    </style>
+<html class="light" lang="en">
+
+<head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+                rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+                rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+                rel="stylesheet" />
+        <script id="tailwind-config">
+                tailwind.config = {
+                        darkMode: "class",
+                        theme: {
+                                extend: {
+                                        "colors": {
+                                                "primary-fixed": "#d2e4fb",
+                                                "surface-container-high": "#dce9ff",
+                                                "outline": "#74777d",
+                                                "on-secondary-fixed": "#351000",
+                                                "error": "#ba1a1a",
+                                                "surface-container": "#e5eeff",
+                                                "on-tertiary-container": "#00a396",
+                                                "primary": "#041627",
+                                                "background": "#f8f9ff",
+                                                "on-primary": "#ffffff",
+                                                "outline-variant": "#c4c6cd",
+                                                "error-container": "#ffdad6",
+                                                "surface-container-highest": "#d3e4fe",
+                                                "on-surface": "#0b1c30",
+                                                "secondary-fixed": "#ffdbcc",
+                                                "surface-bright": "#f8f9ff",
+                                                "tertiary": "#001916",
+                                                "on-primary-fixed-variant": "#38485a",
+                                                "on-error-container": "#93000a",
+                                                "surface-container-low": "#eff4ff",
+                                                "on-surface-variant": "#44474c",
+                                                "tertiary-container": "#00302b",
+                                                "secondary": "#a04100",
+                                                "tertiary-fixed": "#7cf6e7",
+                                                "inverse-primary": "#b7c8de",
+                                                "on-primary-container": "#8192a7",
+                                                "on-error": "#ffffff",
+                                                "inverse-on-surface": "#eaf1ff",
+                                                "secondary-fixed-dim": "#ffb693",
+                                                "on-secondary-fixed-variant": "#7a3000",
+                                                "on-primary-fixed": "#0b1d2d",
+                                                "surface": "#f8f9ff",
+                                                "tertiary-fixed-dim": "#5ddacb",
+                                                "on-tertiary-fixed-variant": "#005049",
+                                                "inverse-surface": "#213145",
+                                                "primary-fixed-dim": "#b7c8de",
+                                                "on-tertiary": "#ffffff",
+                                                "surface-tint": "#4f6073",
+                                                "surface-container-lowest": "#ffffff",
+                                                "on-secondary": "#ffffff",
+                                                "on-tertiary-fixed": "#00201d",
+                                                "primary-container": "#1a2b3c",
+                                                "on-secondary-container": "#572000",
+                                                "surface-variant": "#d3e4fe",
+                                                "on-background": "#0b1c30",
+                                                "surface-dim": "#cbdbf5",
+                                                "secondary-container": "#fe6b00"
+                                        },
+                                        "borderRadius": {
+                                                "DEFAULT": "0.125rem",
+                                                "lg": "0.25rem",
+                                                "xl": "0.5rem",
+                                                "full": "0.75rem"
+                                        },
+                                        "spacing": {
+                                                "gutter": "1.5rem",
+                                                "base": "4px",
+                                                "lg": "2rem",
+                                                "sm": "1rem",
+                                                "margin": "2rem",
+                                                "xl": "3rem",
+                                                "xs": "0.5rem",
+                                                "md": "1.5rem"
+                                        },
+                                        "fontFamily": {
+                                                "h1": ["Inter"], "status-label": ["Inter"], "label-caps": ["Inter"], "body-lg": ["Inter"], "h3": ["Inter"], "h2": ["Inter"], "data-mono": ["Inter"], "body-md": ["Inter"], "body-sm": ["Inter"]
+                                        },
+                                        "fontSize": {
+                                                "h1": ["36px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                                                "status-label": ["12px", { "lineHeight": "1", "letterSpacing": "0", "fontWeight": "600" }],
+                                                "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                                                "body-lg": ["18px", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }],
+                                                "h3": ["20px", { "lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "600" }],
+                                                "h2": ["24px", { "lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                                                "data-mono": ["14px", { "lineHeight": "1", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+                                                "body-md": ["16px", { "lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400" }],
+                                                "body-sm": ["14px", { "lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400" }]
+                                        }
+                                },
+                        },
+                }
+        </script>
+        <style>
+                .material-symbols-outlined {
+                        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+                }
+
+                .bento-grid {
+                        display: grid;
+                        grid-template-columns: repeat(12, 1fr);
+                        gap: 1.5rem;
+                }
+        </style>
 </head>
+
 <body class="bg-background text-on-background font-body-md">
-<!-- TopNavBar -->
-<header class="flex items-center justify-between px-6 h-16 w-full sticky top-0 z-50 bg-white dark:bg-slate-900 shadow-sm border-b border-slate-200 dark:border-slate-800">
-<div class="flex items-center gap-8">
-<span class="text-xl font-black text-slate-900 dark:text-white tracking-tighter">LogiFlow Global</span>
-<nav class="hidden md:flex items-center gap-6 font-['Inter'] text-sm font-medium tracking-tight">
-<a class="text-orange-600 dark:text-orange-500 font-bold border-b-2 border-orange-600 pb-1" href="#">Cargo Owner</a>
-<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 transition-colors" href="#">Container Owner</a>
-</nav>
-</div>
-<div class="flex items-center gap-4">
-<div class="relative hidden lg:block">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
-<input class="pl-10 pr-4 py-2 bg-slate-100 border-none rounded-lg text-sm w-64 focus:ring-2 focus:ring-secondary" placeholder="Search shipments..." type="text"/>
-</div>
-<div class="flex items-center gap-2">
-<button class="p-2 text-slate-500 hover:bg-slate-50 rounded-full transition-all">
-<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
-</button>
-<button class="p-2 text-slate-500 hover:bg-slate-50 rounded-full transition-all">
-<span class="material-symbols-outlined" data-icon="help">help</span>
-</button>
-<div class="w-8 h-8 rounded-full overflow-hidden border border-slate-200 ml-2">
-<img alt="User profile avatar" data-alt="professional headshot of a logistics manager in a modern office setting with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEQNVsDzS-X_qKQCv3YHxOYJOXdSBpTZ9hMYGAeCN1m_y-P6JnRBzG_MREtTUMwaLxQGbN9f9XVmQHKfU5ZBdqSSTXQw87aP-0cHwOOhrwJBzokMyggaJe13FS55Cg0WZhS7cZR3QE2CE_lPyClxgt6_v2XmxI5EhgVv3HK7_tB-NRc3sjkF3OOpUc_NAwsFPni7i8lsQQx9NggWW9USdHEIzNcuUXr3JueDskV0_X9kyILayo1p1gXK50M0ptEPc5JnrVVhjRGUU"/>
-</div>
-</div>
-</div>
-</header>
-<div class="flex min-h-screen">
-<!-- SideNavBar -->
-<aside class="flex flex-col fixed left-0 top-16 h-[calc(100vh-4rem)] p-4 gap-2 z-40 bg-slate-50 dark:bg-slate-950 border-r border-slate-200 dark:border-slate-800 w-64">
-<div class="mb-6 px-3">
-<p class="font-h3 text-slate-900">Fleet Manager</p>
-<p class="text-body-sm text-slate-500">Global Terminal 4</p>
-</div>
-<nav class="flex flex-col gap-1 font-['Inter'] text-sm font-semibold">
-<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 px-3 py-2 hover:bg-slate-200/50 transition-all duration-200" href="#">
-<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
-<span>Dashboard</span>
-</a>
-<a class="flex items-center gap-3 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-md shadow-sm px-3 py-2 border border-slate-200 dark:border-slate-700 transition-all duration-200" href="#">
-<span class="material-symbols-outlined" data-icon="local_shipping">local_shipping</span>
-<span>Shipments</span>
-</a>
-<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 px-3 py-2 hover:bg-slate-200/50 transition-all duration-200" href="#">
-<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
-<span>Inventory</span>
-</a>
-<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 px-3 py-2 hover:bg-slate-200/50 transition-all duration-200" href="#">
-<span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
-<span>Analytics</span>
-</a>
-<a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 px-3 py-2 hover:bg-slate-200/50 transition-all duration-200" href="#">
-<span class="material-symbols-outlined" data-icon="description">description</span>
-<span>Documents</span>
-</a>
-</nav>
-<div class="mt-auto flex flex-col gap-1 pt-4 border-t border-slate-200">
-<a class="flex items-center gap-3 text-slate-500 px-3 py-2 hover:bg-slate-200/50 transition-all" href="#">
-<span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
-<span>Support</span>
-</a>
-<a class="flex items-center gap-3 text-slate-500 px-3 py-2 hover:bg-slate-200/50 transition-all" href="#">
-<span class="material-symbols-outlined" data-icon="logout">logout</span>
-<span>Logout</span>
-</a>
-</div>
-</aside>
-<!-- Main Content -->
-<main class="ml-64 flex-1 p-8">
-<!-- Page Header -->
-<div class="flex items-end justify-between mb-8">
-<div>
-<h1 class="font-h1 text-primary mb-2">Search Space for Cargo</h1>
-<p class="text-body-lg text-on-surface-variant max-w-2xl">Combine multiple cargo manifests to find optimized container space across global carriers.</p>
-</div>
-<button class="bg-secondary text-on-secondary px-6 py-3 rounded-xl font-bold flex items-center gap-2 shadow-lg hover:brightness-110 transition-all">
-<span class="material-symbols-outlined" data-icon="add">add</span>
-                    Upload New Cargo
-                </button>
-</div>
-<!-- Dashboard Grid -->
-<div class="bento-grid">
-<!-- Left: Multi-Select Cargo Inventory -->
-<div class="col-span-12 lg:col-span-4 flex flex-col gap-6">
-<div class="bg-white border border-outline-variant rounded-xl p-6 shadow-sm">
-<div class="flex items-center justify-between mb-4">
-<h3 class="font-h3 text-primary">Pending Cargo</h3>
-<span class="text-label-caps text-secondary">3 SELECTED</span>
-</div>
-<div class="flex flex-col gap-3">
-<!-- Cargo Item 1 -->
-<div class="p-4 rounded-lg border-2 border-secondary bg-orange-50/50 flex items-start gap-4">
-<div class="w-5 h-5 rounded border-2 border-secondary bg-secondary flex items-center justify-center mt-1">
-<span class="material-symbols-outlined text-white text-xs" style="font-variation-settings: 'FILL' 1;">check</span>
-</div>
-<div>
-<p class="font-bold text-on-surface">CRG-9842: Industrial Pumps</p>
-<p class="text-body-sm text-on-surface-variant">4,200kg • 12 CBM • Fragile</p>
-</div>
-</div>
-<!-- Cargo Item 2 -->
-<div class="p-4 rounded-lg border-2 border-secondary bg-orange-50/50 flex items-start gap-4">
-<div class="w-5 h-5 rounded border-2 border-secondary bg-secondary flex items-center justify-center mt-1">
-<span class="material-symbols-outlined text-white text-xs" style="font-variation-settings: 'FILL' 1;">check</span>
-</div>
-<div>
-<p class="font-bold text-on-surface">CRG-7710: Server Racks</p>
-<p class="text-body-sm text-on-surface-variant">1,500kg • 8.5 CBM • High Value</p>
-</div>
-</div>
-<!-- Cargo Item 3 -->
-<div class="p-4 rounded-lg border-2 border-secondary bg-orange-50/50 flex items-start gap-4">
-<div class="w-5 h-5 rounded border-2 border-secondary bg-secondary flex items-center justify-center mt-1">
-<span class="material-symbols-outlined text-white text-xs" style="font-variation-settings: 'FILL' 1;">check</span>
-</div>
-<div>
-<p class="font-bold text-on-surface">CRG-2204: HVAC Units</p>
-<p class="text-body-sm text-on-surface-variant">3,100kg • 15 CBM</p>
-</div>
-</div>
-<!-- Cargo Item 4 (Unselected) -->
-<div class="p-4 rounded-lg border border-outline-variant hover:border-secondary transition-colors cursor-pointer flex items-start gap-4">
-<div class="w-5 h-5 rounded border-2 border-outline-variant mt-1"></div>
-<div>
-<p class="font-bold text-on-surface">CRG-1109: Medical Supplies</p>
-<p class="text-body-sm text-on-surface-variant">800kg • 4 CBM</p>
-</div>
-</div>
-</div>
-</div>
-<!-- Summary Stats Card -->
-<div class="bg-primary text-white rounded-xl p-6 shadow-xl">
-<p class="text-label-caps opacity-70 mb-4 uppercase">Combined Manifest Summary</p>
-<div class="grid grid-cols-2 gap-4">
-<div>
-<p class="text-h2 text-secondary-fixed-dim">8,800</p>
-<p class="text-body-sm opacity-80">Total kg</p>
-</div>
-<div>
-<p class="text-h2 text-secondary-fixed-dim">35.5</p>
-<p class="text-body-sm opacity-80">Total CBM</p>
-</div>
-</div>
-<div class="mt-6 pt-6 border-t border-white/10">
-<div class="flex items-center justify-between mb-2">
-<span class="text-body-sm">Standard 40ft Load</span>
-<span class="text-body-sm font-bold">54% Full</span>
-</div>
-<div class="w-full bg-white/10 h-2 rounded-full overflow-hidden">
-<div class="bg-secondary h-full" style="width: 54%;"></div>
-</div>
-</div>
-</div>
-</div>
-<!-- Right: Search Filters and Results -->
-<div class="col-span-12 lg:col-span-8 flex flex-col gap-6">
-<!-- Filters Bar -->
-<div class="bg-white border border-outline-variant rounded-xl p-4 shadow-sm flex flex-wrap items-center gap-4">
-<div class="flex-1 min-w-[200px]">
-<label class="text-label-caps text-on-surface-variant mb-1 block">Route</label>
-<div class="relative">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-primary">location_on</span>
-<input class="w-full pl-10 pr-4 py-2 border border-outline-variant rounded-lg text-sm focus:ring-primary focus:border-primary" type="text" value="Shanghai (CNSHA) → Rotterdam (NLRTM)"/>
-</div>
-</div>
-<div class="w-48">
-<label class="text-label-caps text-on-surface-variant mb-1 block">Date Window</label>
-<div class="relative">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-primary">calendar_today</span>
-<input class="w-full pl-10 pr-4 py-2 border border-outline-variant rounded-lg text-sm" type="text" value="Oct 12 - Oct 20"/>
-</div>
-</div>
-<div class="w-48">
-<label class="text-label-caps text-on-surface-variant mb-1 block">Carrier</label>
-<select class="w-full px-4 py-2 border border-outline-variant rounded-lg text-sm bg-white">
-<option>All Major Carriers</option>
-<option>Maersk</option>
-<option>MSC</option>
-<option>CMA CGM</option>
-</select>
-</div>
-<div class="self-end pb-0.5">
-<button class="bg-primary text-white p-2.5 rounded-lg hover:bg-primary-container transition-all">
-<span class="material-symbols-outlined">filter_list</span>
-</button>
-</div>
-</div>
-<!-- Results List -->
-<div class="flex flex-col gap-4">
-<h4 class="text-label-caps text-on-surface-variant">Recommended Optimized Spaces (4)</h4>
-<!-- Result Card 1 -->
-<div class="bg-white border border-outline-variant rounded-xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col md:flex-row md:items-center gap-6 group">
-<div class="w-16 h-16 bg-surface-container rounded-lg flex items-center justify-center">
-<img alt="Carrier Logo" class="w-12 h-12 object-contain" data-alt="clean minimalist logo of a global shipping company featuring a stylized anchor in deep navy blue" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLP30NDo0pBBrJJU8ZA5F8Mv0WAOLKMd0Sgif0_gax16KfUR8vu6wJ661Utl-1P-xkV-5p9fLVKCaVYPhsHA97HgMwakeKY0L1xvqAir0Ho4DuirHD9J_dCZXzXimcyhntC5elFVP6MGyMwkTGlCT5jBnWSuBqzt-sdUVqJqyARzeISciC4xYjBP0r0LAVwPUyoqF6Ggjb6n4CATUvta5-VfRAxYHfiVxMRc-L2YO2Iw-hVk9u7Y_fG72ncg71BYVwQj_Jsqq4Odg"/>
-</div>
-<div class="flex-1">
-<div class="flex items-center gap-3 mb-1">
-<h4 class="font-h3 text-primary">Maersk Line • Voyager 99</h4>
-<span class="bg-on-tertiary-container/10 text-on-tertiary-container text-status-label px-2 py-1 rounded">FASTEST ROUTE</span>
-</div>
-<div class="flex items-center gap-6 text-body-sm text-on-surface-variant">
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 28 Days Transit</span>
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">set_meal</span> Refrigeration Avail.</span>
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">confirmation_number</span> 40ft HC Slot</span>
-</div>
-</div>
-<div class="text-right flex flex-col items-end gap-2">
-<p class="text-h2 text-primary">$4,250</p>
-<p class="text-body-sm text-on-surface-variant">Estimated All-in</p>
-<button class="mt-2 bg-secondary text-on-secondary px-6 py-2 rounded-lg font-bold group-hover:scale-105 transition-transform">Book Now</button>
-</div>
-</div>
-<!-- Result Card 2 -->
-<div class="bg-white border border-outline-variant rounded-xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col md:flex-row md:items-center gap-6 group border-l-4 border-l-tertiary-fixed">
-<div class="w-16 h-16 bg-surface-container rounded-lg flex items-center justify-center">
-<img alt="Carrier Logo" class="w-12 h-12 object-contain" data-alt="modern shipping logo with bold lettering and abstract wave pattern in orange and gray" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZ0DILQY4wMjQHncBphgWhqk0a7QPrk7MU9QMVNdEc1QOazZy7Q8JTXjBnR-SRFc835IFCT9OcUwafqIDJQiDlEIJ3VcMpGqfeO8yTG5jMjjsiWnUm3M43qZzpGrktXfPAS8PdXN9V0sChkKU0Fe3UBFKZ_sgJBbGTFPOfovIkf5ZX83vtulFouusrS358V0zu5hVQOCh_1WibQCi3FEA7z8keM31C6_lL8E23ZqW14rUF3pJszOXPDgY96RqNmUdeFDV2e3uf6ww"/>
-</div>
-<div class="flex-1">
-<div class="flex items-center gap-3 mb-1">
-<h4 class="font-h3 text-primary">MSC Global • Mediterranean Express</h4>
-<span class="bg-tertiary-fixed/20 text-on-tertiary-fixed-variant text-status-label px-2 py-1 rounded">BEST VALUE</span>
-</div>
-<div class="flex items-center gap-6 text-body-sm text-on-surface-variant">
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 34 Days Transit</span>
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">info</span> Stopover: Singapore</span>
-</div>
-</div>
-<div class="text-right flex flex-col items-end gap-2">
-<p class="text-h2 text-primary">$3,890</p>
-<p class="text-body-sm text-on-surface-variant">Estimated All-in</p>
-<button class="mt-2 border border-secondary text-secondary px-6 py-2 rounded-lg font-bold hover:bg-secondary/5 transition-colors">Book Now</button>
-</div>
-</div>
-<!-- Result Card 3 -->
-<div class="bg-white border border-outline-variant rounded-xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col md:flex-row md:items-center gap-6 group opacity-80">
-<div class="w-16 h-16 bg-surface-container rounded-lg flex items-center justify-center">
-<img alt="Carrier Logo" class="w-12 h-12 object-contain grayscale" data-alt="abstract logistics icon in monochrome featuring interconnected lines representing a supply chain network" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDA0o1Npj5RIPbVx-XWXlEHHRgTQM2SjGDh6pQe_MwhZarGyAUPyn10WE3Y-Ya-BuOrw3waaLfPqL2Q45IGQ9DL1ZYfEB2jxKZ6CZjoVIn5xU92H0npI0Tzb4wFNTmwpbqelBu5IyRn1oFrEy2wJAbnZcgqEsEciM6O4b25eVTYX_JZiardZxqLEGSEMh2t_EUwtwOMmzIeLViYUK7vSAK_ayJe9MDRGpEZXPSiZnJ9sfVMLRM6wsdYj20n_-rmUNyteHtlzZTfIAY"/>
-</div>
-<div class="flex-1">
-<div class="flex items-center gap-3 mb-1">
-<h4 class="font-h3 text-primary">COSCO Shipping • Silk Road V</h4>
-</div>
-<div class="flex items-center gap-6 text-body-sm text-on-surface-variant">
-<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span> 31 Days Transit</span>
-<span class="flex items-center gap-1 text-error"><span class="material-symbols-outlined text-sm">error</span> Only 1 Slot Left</span>
-</div>
-</div>
-<div class="text-right flex flex-col items-end gap-2">
-<p class="text-h2 text-primary">$4,100</p>
-<p class="text-body-sm text-on-surface-variant">Estimated All-in</p>
-<button class="mt-2 border border-secondary text-secondary px-6 py-2 rounded-lg font-bold hover:bg-secondary/5 transition-colors">Book Now</button>
-</div>
-</div>
-</div>
-<!-- Map Preview (Asymmetric Layout) -->
-<div class="bg-surface-container rounded-xl overflow-hidden h-64 relative border border-outline-variant">
-<div class="absolute inset-0 z-0 bg-slate-200">
-<img class="w-full h-full object-cover opacity-50" data-alt="high contrast stylized satellite map of global oceanic trade routes connecting east asia to europe with glowing data points" data-location="Global Trade Routes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ5IVrCFCpPIF3IX3C1SK-7MnrmVokEjqW251I-OyTorJTuWurq_V9qLTEORJh_qMi53jbjIyDk2HlyZE6m71tZModDL3bvANZLn7Ux6H6dzXukbUdgJO_0Kb54BjxattINtjCyVQswVDZSFyRVVUmKFBdID1RBVCW_O6PNv0jFyPGo0cBxJCyV4PmLm5dybsDUS6vWVLd8zakTUSyNBkLt14g-ucVEcA7KOQgsbOaM6nQJza0GcHA1bFzvqtnPEE6dezBrkBcT64"/>
-</div>
-<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-<div class="bg-white/90 backdrop-blur-md p-4 rounded-xl shadow-2xl border border-white flex items-center gap-4 max-w-sm pointer-events-auto">
-<div class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-white">
-<span class="material-symbols-outlined">route</span>
-</div>
-<div>
-<p class="font-bold text-primary">Live Optimization Map</p>
-<p class="text-body-sm text-on-surface-variant">Visualizing 12 alternate transshipment hubs for your combined manifest.</p>
-</div>
-<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</main>
-</div>
-<!-- Floating Action Button Contextual Logic: Suppressed on Search -->
-</body></html>
+        <!-- TopNavBar -->
+        <header
+                class="flex items-center justify-between px-6 h-16 w-full sticky top-0 z-50 bg-white dark:bg-slate-900 shadow-sm border-b border-slate-200 dark:border-slate-800">
+                <div class="flex items-center gap-8">
+                        <span class="text-xl font-black text-slate-900 dark:text-white tracking-tighter">LogiFlow
+                                Global</span>
+                        <nav
+                                class="hidden md:flex items-center gap-6 font-['Inter'] text-sm font-medium tracking-tight">
+                                <a class="text-orange-600 dark:text-orange-500 font-bold border-b-2 border-orange-600 pb-1"
+                                        href="#">Cargo Owner</a>
+                                <a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 transition-colors"
+                                        href="#">Container Owner</a>
+                        </nav>
+                </div>
+                <div class="flex items-center gap-4">
+                        <div class="relative hidden lg:block">
+                                <span
+                                        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+                                <input class="pl-10 pr-4 py-2 bg-slate-100 border-none rounded-lg text-sm w-64 focus:ring-2 focus:ring-secondary"
+                                        placeholder="Search shipments..." type="text" />
+                        </div>
+                        <div class="flex items-center gap-2">
+                                <button class="p-2 text-slate-500 hover:bg-slate-50 rounded-full transition-all">
+                                        <span class="material-symbols-outlined"
+                                                data-icon="notifications">notifications</span>
+                                </button>
+                                <button class="p-2 text-slate-500 hover:bg-slate-50 rounded-full transition-all">
+                                        <span class="material-symbols-outlined" data-icon="help">help</span>
+                                </button>
+                                <div class="w-8 h-8 rounded-full overflow-hidden border border-slate-200 ml-2">
+                                        <img alt="User profile avatar"
+                                                data-alt="professional headshot of a logistics manager in a modern office setting with soft natural light"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEQNVsDzS-X_qKQCv3YHxOYJOXdSBpTZ9hMYGAeCN1m_y-P6JnRBzG_MREtTUMwaLxQGbN9f9XVmQHKfU5ZBdqSSTXQw87aP-0cHwOOhrwJBzokMyggaJe13FS55Cg0WZhS7cZR3QE2CE_lPyClxgt6_v2XmxI5EhgVv3HK7_tB-NRc3sjkF3OOpUc_NAwsFPni7i8lsQQx9NggWW9USdHEIzNcuUXr3JueDskV0_X9kyILayo1p1gXK50M0ptEPc5JnrVVhjRGUU" />
+                                </div>
+                        </div>
+                </div>
+        </header>
+        <div class="flex min-h-screen">
+                <!-- SideNavBar -->
+                <aside
+                        class="flex flex-col fixed left-0 top-16 h-[calc(100vh-4rem)] p-4 gap-2 z-40 bg-slate-50 dark:bg-slate-950 border-r border-slate-200 dark:border-slate-800 w-64">
+                        <div class="mb-6 px-3">
+                                <p class="font-h3 text-slate-900">Fleet Manager</p>
+                                <p class="text-body-sm text-slate-500">Global Terminal 4</p>
+                        </div>
+                        <nav class="flex flex-col gap-1 font-['Inter'] text-sm font-semibold">
+                                <a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 px-3 py-2 hover:bg-slate-200/50 transition-all duration-200"
+                                        href="#">
+                                        <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                                        <span>Dashboard</span>
+                                </a>
+                                <a class="flex items-center gap-3 bg-white dark:bg-slate-800 text-slate-900 dark:text-white rounded-md shadow-sm px-3 py-2 border border-slate-200 dark:border-slate-700 transition-all duration-200"
+                                        href="#">
+                                        <span class="material-symbols-outlined"
+                                                data-icon="local_shipping">local_shipping</span>
+                                        <span>Shipments</span>
+                                </a>
+                                <a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 px-3 py-2 hover:bg-slate-200/50 transition-all duration-200"
+                                        href="#">
+                                        <span class="material-symbols-outlined"
+                                                data-icon="inventory_2">inventory_2</span>
+                                        <span>Inventory</span>
+                                </a>
+                                <a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 px-3 py-2 hover:bg-slate-200/50 transition-all duration-200"
+                                        href="#">
+                                        <span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
+                                        <span>Analytics</span>
+                                </a>
+                                <a class="flex items-center gap-3 text-slate-500 dark:text-slate-400 px-3 py-2 hover:bg-slate-200/50 transition-all duration-200"
+                                        href="#">
+                                        <span class="material-symbols-outlined"
+                                                data-icon="description">description</span>
+                                        <span>Documents</span>
+                                </a>
+                        </nav>
+                        <div class="mt-auto flex flex-col gap-1 pt-4 border-t border-slate-200">
+                                <a class="flex items-center gap-3 text-slate-500 px-3 py-2 hover:bg-slate-200/50 transition-all"
+                                        href="#">
+                                        <span class="material-symbols-outlined"
+                                                data-icon="support_agent">support_agent</span>
+                                        <span>Support</span>
+                                </a>
+                                <a class="flex items-center gap-3 text-slate-500 px-3 py-2 hover:bg-slate-200/50 transition-all"
+                                        href="#">
+                                        <span class="material-symbols-outlined" data-icon="logout">logout</span>
+                                        <span>Logout</span>
+                                </a>
+                        </div>
+                </aside>
+                <!-- Main Content -->
+                <main class="ml-64 flex-1 p-8">
+                        <!-- Page Header -->
+                        <div class="flex items-end justify-between mb-8">
+                                <div>
+                                        <h1 class="font-h1 text-primary mb-2">Search Space for Cargo</h1>
+                                        <p class="text-body-lg text-on-surface-variant max-w-2xl">Combine multiple cargo
+                                                manifests to find optimized container space across global carriers.</p>
+                                </div>
+                                <button
+                                        class="bg-secondary text-on-secondary px-6 py-3 rounded-xl font-bold flex items-center gap-2 shadow-lg hover:brightness-110 transition-all">
+                                        <span class="material-symbols-outlined" data-icon="add">add</span>
+                                        Upload New Cargo
+                                </button>
+                        </div>
+                        <!-- Dashboard Grid -->
+                        <div class="bento-grid">
+                                <!-- Left: Multi-Select Cargo Inventory -->
+                                <div class="col-span-12 lg:col-span-4 flex flex-col gap-6">
+                                        <div class="bg-white border border-outline-variant rounded-xl p-6 shadow-sm">
+                                                <div class="flex items-center justify-between mb-4">
+                                                        <h3 class="font-h3 text-primary">Pending Cargo</h3>
+                                                        <span class="text-label-caps text-secondary">3 SELECTED</span>
+                                                </div>
+                                                <div class="flex flex-col gap-3">
+                                                        <!-- Cargo Item 1 -->
+                                                        <div
+                                                                class="p-4 rounded-lg border-2 border-secondary bg-orange-50/50 flex items-start gap-4">
+                                                                <div
+                                                                        class="w-5 h-5 rounded border-2 border-secondary bg-secondary flex items-center justify-center mt-1">
+                                                                        <span class="material-symbols-outlined text-white text-xs"
+                                                                                style="font-variation-settings: 'FILL' 1;">check</span>
+                                                                </div>
+                                                                <div>
+                                                                        <p class="font-bold text-on-surface">CRG-9842:
+                                                                                Industrial Pumps</p>
+                                                                        <p class="text-body-sm text-on-surface-variant">
+                                                                                4,200kg • 12 CBM • Fragile</p>
+                                                                </div>
+                                                        </div>
+                                                        <!-- Cargo Item 2 -->
+                                                        <div
+                                                                class="p-4 rounded-lg border-2 border-secondary bg-orange-50/50 flex items-start gap-4">
+                                                                <div
+                                                                        class="w-5 h-5 rounded border-2 border-secondary bg-secondary flex items-center justify-center mt-1">
+                                                                        <span class="material-symbols-outlined text-white text-xs"
+                                                                                style="font-variation-settings: 'FILL' 1;">check</span>
+                                                                </div>
+                                                                <div>
+                                                                        <p class="font-bold text-on-surface">CRG-7710:
+                                                                                Server Racks</p>
+                                                                        <p class="text-body-sm text-on-surface-variant">
+                                                                                1,500kg • 8.5 CBM • High Value</p>
+                                                                </div>
+                                                        </div>
+                                                        <!-- Cargo Item 3 -->
+                                                        <div
+                                                                class="p-4 rounded-lg border-2 border-secondary bg-orange-50/50 flex items-start gap-4">
+                                                                <div
+                                                                        class="w-5 h-5 rounded border-2 border-secondary bg-secondary flex items-center justify-center mt-1">
+                                                                        <span class="material-symbols-outlined text-white text-xs"
+                                                                                style="font-variation-settings: 'FILL' 1;">check</span>
+                                                                </div>
+                                                                <div>
+                                                                        <p class="font-bold text-on-surface">CRG-2204:
+                                                                                HVAC Units</p>
+                                                                        <p class="text-body-sm text-on-surface-variant">
+                                                                                3,100kg • 15 CBM</p>
+                                                                </div>
+                                                        </div>
+                                                        <!-- Cargo Item 4 (Unselected) -->
+                                                        <div
+                                                                class="p-4 rounded-lg border border-outline-variant hover:border-secondary transition-colors cursor-pointer flex items-start gap-4">
+                                                                <div
+                                                                        class="w-5 h-5 rounded border-2 border-outline-variant mt-1">
+                                                                </div>
+                                                                <div>
+                                                                        <p class="font-bold text-on-surface">CRG-1109:
+                                                                                Medical Supplies</p>
+                                                                        <p class="text-body-sm text-on-surface-variant">
+                                                                                800kg • 4 CBM</p>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <!-- Summary Stats Card -->
+                                        <div class="bg-primary text-white rounded-xl p-6 shadow-xl">
+                                                <p class="text-label-caps opacity-70 mb-4 uppercase">Combined Manifest
+                                                        Summary</p>
+                                                <div class="grid grid-cols-2 gap-4">
+                                                        <div>
+                                                                <p class="text-h2 text-secondary-fixed-dim">8,800</p>
+                                                                <p class="text-body-sm opacity-80">Total kg</p>
+                                                        </div>
+                                                        <div>
+                                                                <p class="text-h2 text-secondary-fixed-dim">35.5</p>
+                                                                <p class="text-body-sm opacity-80">Total CBM</p>
+                                                        </div>
+                                                </div>
+                                                <div class="mt-6 pt-6 border-t border-white/10">
+                                                        <div class="flex items-center justify-between mb-2">
+                                                                <span class="text-body-sm">Standard 40ft Load</span>
+                                                                <span class="text-body-sm font-bold">54% Full</span>
+                                                        </div>
+                                                        <div
+                                                                class="w-full bg-white/10 h-2 rounded-full overflow-hidden">
+                                                                <div class="bg-secondary h-full" style="width: 54%;">
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <!-- Right: Search Filters and Results -->
+                                <div class="col-span-12 lg:col-span-8 flex flex-col gap-6">
+                                        <!-- Filters Bar -->
+                                        <div
+                                                class="bg-white border border-outline-variant rounded-xl p-4 shadow-sm flex flex-wrap items-center gap-4">
+                                                <div class="flex-1 min-w-[200px]">
+                                                        <label
+                                                                class="text-label-caps text-on-surface-variant mb-1 block">Route</label>
+                                                        <div class="relative">
+                                                                <span
+                                                                        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-primary">location_on</span>
+                                                                <input class="w-full pl-10 pr-4 py-2 border border-outline-variant rounded-lg text-sm focus:ring-primary focus:border-primary"
+                                                                        type="text"
+                                                                        value="Shanghai (CNSHA) → Rotterdam (NLRTM)" />
+                                                        </div>
+                                                </div>
+                                                <div class="w-48">
+                                                        <label
+                                                                class="text-label-caps text-on-surface-variant mb-1 block">Date
+                                                                Window</label>
+                                                        <div class="relative">
+                                                                <span
+                                                                        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-primary">calendar_today</span>
+                                                                <input class="w-full pl-10 pr-4 py-2 border border-outline-variant rounded-lg text-sm"
+                                                                        type="text" value="Oct 12 - Oct 20" />
+                                                        </div>
+                                                </div>
+                                                <div class="w-48">
+                                                        <label
+                                                                class="text-label-caps text-on-surface-variant mb-1 block">Carrier</label>
+                                                        <select
+                                                                class="w-full px-4 py-2 border border-outline-variant rounded-lg text-sm bg-white">
+                                                                <option>All Major Carriers</option>
+                                                                <option>Maersk</option>
+                                                                <option>MSC</option>
+                                                                <option>CMA CGM</option>
+                                                        </select>
+                                                </div>
+                                                <div class="self-end pb-0.5">
+                                                        <button
+                                                                class="bg-primary text-white p-2.5 rounded-lg hover:bg-primary-container transition-all">
+                                                                <span
+                                                                        class="material-symbols-outlined">filter_list</span>
+                                                        </button>
+                                                </div>
+                                        </div>
+                                        <!-- Results List -->
+                                        <div class="flex flex-col gap-4">
+                                                <h4 class="text-label-caps text-on-surface-variant">Recommended
+                                                        Optimized Spaces (4)</h4>
+                                                <!-- Result Card 1 -->
+                                                <div
+                                                        class="bg-white border border-outline-variant rounded-xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col md:flex-row md:items-center gap-6 group">
+                                                        <div
+                                                                class="w-16 h-16 bg-surface-container rounded-lg flex items-center justify-center">
+                                                                <img alt="Carrier Logo" class="w-12 h-12 object-contain"
+                                                                        data-alt="clean minimalist logo of a global shipping company featuring a stylized anchor in deep navy blue"
+                                                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLP30NDo0pBBrJJU8ZA5F8Mv0WAOLKMd0Sgif0_gax16KfUR8vu6wJ661Utl-1P-xkV-5p9fLVKCaVYPhsHA97HgMwakeKY0L1xvqAir0Ho4DuirHD9J_dCZXzXimcyhntC5elFVP6MGyMwkTGlCT5jBnWSuBqzt-sdUVqJqyARzeISciC4xYjBP0r0LAVwPUyoqF6Ggjb6n4CATUvta5-VfRAxYHfiVxMRc-L2YO2Iw-hVk9u7Y_fG72ncg71BYVwQj_Jsqq4Odg" />
+                                                        </div>
+                                                        <div class="flex-1">
+                                                                <div class="flex items-center gap-3 mb-1">
+                                                                        <h4 class="font-h3 text-primary">Maersk Line •
+                                                                                Voyager 99</h4>
+                                                                        <span
+                                                                                class="bg-on-tertiary-container/10 text-on-tertiary-container text-status-label px-2 py-1 rounded">FASTEST
+                                                                                ROUTE</span>
+                                                                </div>
+                                                                <div
+                                                                        class="flex items-center gap-6 text-body-sm text-on-surface-variant">
+                                                                        <span class="flex items-center gap-1"><span
+                                                                                        class="material-symbols-outlined text-sm">schedule</span>
+                                                                                28 Days Transit</span>
+                                                                        <span class="flex items-center gap-1"><span
+                                                                                        class="material-symbols-outlined text-sm">set_meal</span>
+                                                                                Refrigeration Avail.</span>
+                                                                        <span class="flex items-center gap-1"><span
+                                                                                        class="material-symbols-outlined text-sm">confirmation_number</span>
+                                                                                40ft HC Slot</span>
+                                                                </div>
+                                                        </div>
+                                                        <div class="text-right flex flex-col items-end gap-2">
+                                                                <p class="text-h2 text-primary">$4,250</p>
+                                                                <p class="text-body-sm text-on-surface-variant">
+                                                                        Estimated All-in</p>
+                                                                <button
+                                                                        class="mt-2 bg-secondary text-on-secondary px-6 py-2 rounded-lg font-bold group-hover:scale-105 transition-transform">Book
+                                                                        Now</button>
+                                                        </div>
+                                                </div>
+                                                <!-- Result Card 2 -->
+                                                <div
+                                                        class="bg-white border border-outline-variant rounded-xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col md:flex-row md:items-center gap-6 group border-l-4 border-l-tertiary-fixed">
+                                                        <div
+                                                                class="w-16 h-16 bg-surface-container rounded-lg flex items-center justify-center">
+                                                                <img alt="Carrier Logo" class="w-12 h-12 object-contain"
+                                                                        data-alt="modern shipping logo with bold lettering and abstract wave pattern in orange and gray"
+                                                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZ0DILQY4wMjQHncBphgWhqk0a7QPrk7MU9QMVNdEc1QOazZy7Q8JTXjBnR-SRFc835IFCT9OcUwafqIDJQiDlEIJ3VcMpGqfeO8yTG5jMjjsiWnUm3M43qZzpGrktXfPAS8PdXN9V0sChkKU0Fe3UBFKZ_sgJBbGTFPOfovIkf5ZX83vtulFouusrS358V0zu5hVQOCh_1WibQCi3FEA7z8keM31C6_lL8E23ZqW14rUF3pJszOXPDgY96RqNmUdeFDV2e3uf6ww" />
+                                                        </div>
+                                                        <div class="flex-1">
+                                                                <div class="flex items-center gap-3 mb-1">
+                                                                        <h4 class="font-h3 text-primary">MSC Global •
+                                                                                Mediterranean Express</h4>
+                                                                        <span
+                                                                                class="bg-tertiary-fixed/20 text-on-tertiary-fixed-variant text-status-label px-2 py-1 rounded">BEST
+                                                                                VALUE</span>
+                                                                </div>
+                                                                <div
+                                                                        class="flex items-center gap-6 text-body-sm text-on-surface-variant">
+                                                                        <span class="flex items-center gap-1"><span
+                                                                                        class="material-symbols-outlined text-sm">schedule</span>
+                                                                                34 Days Transit</span>
+                                                                        <span class="flex items-center gap-1"><span
+                                                                                        class="material-symbols-outlined text-sm">info</span>
+                                                                                Stopover: Singapore</span>
+                                                                </div>
+                                                        </div>
+                                                        <div class="text-right flex flex-col items-end gap-2">
+                                                                <p class="text-h2 text-primary">$3,890</p>
+                                                                <p class="text-body-sm text-on-surface-variant">
+                                                                        Estimated All-in</p>
+                                                                <button
+                                                                        class="mt-2 border border-secondary text-secondary px-6 py-2 rounded-lg font-bold hover:bg-secondary/5 transition-colors">Book
+                                                                        Now</button>
+                                                        </div>
+                                                </div>
+                                                <!-- Result Card 3 -->
+                                                <div
+                                                        class="bg-white border border-outline-variant rounded-xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col md:flex-row md:items-center gap-6 group opacity-80">
+                                                        <div
+                                                                class="w-16 h-16 bg-surface-container rounded-lg flex items-center justify-center">
+                                                                <img alt="Carrier Logo"
+                                                                        class="w-12 h-12 object-contain grayscale"
+                                                                        data-alt="abstract logistics icon in monochrome featuring interconnected lines representing a supply chain network"
+                                                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDA0o1Npj5RIPbVx-XWXlEHHRgTQM2SjGDh6pQe_MwhZarGyAUPyn10WE3Y-Ya-BuOrw3waaLfPqL2Q45IGQ9DL1ZYfEB2jxKZ6CZjoVIn5xU92H0npI0Tzb4wFNTmwpbqelBu5IyRn1oFrEy2wJAbnZcgqEsEciM6O4b25eVTYX_JZiardZxqLEGSEMh2t_EUwtwOMmzIeLViYUK7vSAK_ayJe9MDRGpEZXPSiZnJ9sfVMLRM6wsdYj20n_-rmUNyteHtlzZTfIAY" />
+                                                        </div>
+                                                        <div class="flex-1">
+                                                                <div class="flex items-center gap-3 mb-1">
+                                                                        <h4 class="font-h3 text-primary">COSCO Shipping
+                                                                                • Silk Road V</h4>
+                                                                </div>
+                                                                <div
+                                                                        class="flex items-center gap-6 text-body-sm text-on-surface-variant">
+                                                                        <span class="flex items-center gap-1"><span
+                                                                                        class="material-symbols-outlined text-sm">schedule</span>
+                                                                                31 Days Transit</span>
+                                                                        <span
+                                                                                class="flex items-center gap-1 text-error"><span
+                                                                                        class="material-symbols-outlined text-sm">error</span>
+                                                                                Only 1 Slot Left</span>
+                                                                </div>
+                                                        </div>
+                                                        <div class="text-right flex flex-col items-end gap-2">
+                                                                <p class="text-h2 text-primary">$4,100</p>
+                                                                <p class="text-body-sm text-on-surface-variant">
+                                                                        Estimated All-in</p>
+                                                                <button
+                                                                        class="mt-2 border border-secondary text-secondary px-6 py-2 rounded-lg font-bold hover:bg-secondary/5 transition-colors">Book
+                                                                        Now</button>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <!-- Map Preview (Asymmetric Layout) -->
+                                        <div
+                                                class="bg-surface-container rounded-xl overflow-hidden h-64 relative border border-outline-variant">
+                                                <div class="absolute inset-0 z-0 bg-slate-200">
+                                                        <img class="w-full h-full object-cover opacity-50"
+                                                                data-alt="high contrast stylized satellite map of global oceanic trade routes connecting east asia to europe with glowing data points"
+                                                                data-location="Global Trade Routes"
+                                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQ5IVrCFCpPIF3IX3C1SK-7MnrmVokEjqW251I-OyTorJTuWurq_V9qLTEORJh_qMi53jbjIyDk2HlyZE6m71tZModDL3bvANZLn7Ux6H6dzXukbUdgJO_0Kb54BjxattINtjCyVQswVDZSFyRVVUmKFBdID1RBVCW_O6PNv0jFyPGo0cBxJCyV4PmLm5dybsDUS6vWVLd8zakTUSyNBkLt14g-ucVEcA7KOQgsbOaM6nQJza0GcHA1bFzvqtnPEE6dezBrkBcT64" />
+                                                </div>
+                                                <div
+                                                        class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                                                        <div
+                                                                class="bg-white/90 backdrop-blur-md p-4 rounded-xl shadow-2xl border border-white flex items-center gap-4 max-w-sm pointer-events-auto">
+                                                                <div
+                                                                        class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-white">
+                                                                        <span
+                                                                                class="material-symbols-outlined">route</span>
+                                                                </div>
+                                                                <div>
+                                                                        <p class="font-bold text-primary">Live
+                                                                                Optimization Map</p>
+                                                                        <p class="text-body-sm text-on-surface-variant">
+                                                                                Visualizing 12 alternate transshipment
+                                                                                hubs for your combined manifest.</p>
+                                                                </div>
+                                                                <span
+                                                                        class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </main>
+        </div>
+        <!-- Floating Action Button Contextual Logic: Suppressed on Search -->
+</body>
+
+</html>

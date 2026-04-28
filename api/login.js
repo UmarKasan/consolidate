@@ -1,49 +1,123 @@
-// api/login.js (Client-side AJAX/LocalStorage logic)
-document.addEventListener('DOMContentLoaded', function() {
-  const loginButton = document.getElementById('login');
-  const username = document.getElementById('username');
-  const password = document.getElementById('password');
-
-  // --- MOCK USER DATA ---
-    // For demonstration, we define two user credentials.
-    const MOCK_USERS = [
-        { username: 'user@container.com', password: 'password123', role: 'basic' },
-        { username: 'freight@stupid.com', password: 'password123', role: 'basic' },
-        { username: 'admin@console.com', password: 'adminpass', role: 'administrator' }
+// ─── Seed default users if not already in localStorage ───────────────────────
+(function seedUsers() {
+  if (!localStorage.getItem('allUsers')) {
+    const users = [
+      { email: "admin@example.com",    password: "pass123" },
+      { email: "coloader@example.com", password: "pass123" },
+      { email: "freight@example.com",  password: "pass123" }
     ];
+    localStorage.setItem('allUsers', JSON.stringify(users));
+  }
+})();
 
-    if (!loginForm || !messageElement) {
-        console.error("Login form or message element not found. Please check your HTML structure.");
-        return;
+// ─── Constants ────────────────────────────────────────────────────────────────
+const SESSION_TIMEOUT_MS = 30 * 60 * 1000; // 30 minutes
+
+// ─── DOM helpers (resolved lazily so inline onclick= works at any time) ───────
+function getEmailInput()    { return document.getElementById('email'); }
+function getPasswordInput() { return document.getElementById('password'); }
+function getLoginButton()   { return document.getElementById('login'); }
+function getErrorBanner()   { return document.getElementById('error-banner'); }
+
+// ─── Credential check ─────────────────────────────────────────────────────────
+function checkCredentials(email, password) {
+  try {
+    const users = JSON.parse(localStorage.getItem('allUsers')) || [];
+    return users.some(u => u.email === email && u.password === password);
+  } catch {
+    return false;
+  }
+}
+
+// ─── Error display ────────────────────────────────────────────────────────────
+function showError(message) {
+  const banner = getErrorBanner();
+  if (!banner) return;
+  const span = banner.querySelector('span:last-child');
+  if (span) span.textContent = message;
+  banner.classList.remove('hidden');
+  banner.classList.add('shake');
+  banner.addEventListener('animationend', () => banner.classList.remove('shake'), { once: true });
+}
+
+function clearError() {
+  const banner = getErrorBanner();
+  if (!banner) return;
+  banner.classList.add('hidden');
+  const span = banner.querySelector('span:last-child');
+  if (span) span.textContent = '';
+}
+
+// ─── Login handler (global — called by inline onclick in HTML) ────────────────
+function handleLogin(e) {
+  if (e) e.preventDefault();
+  clearError();
+
+  const emailInput    = getEmailInput();
+  const passwordInput = getPasswordInput();
+  const loginButton   = getLoginButton();
+
+  const email    = emailInput    ? emailInput.value.trim()    : '';
+  const password = passwordInput ? passwordInput.value.trim() : '';
+
+  if (!email || !password) {
+    showError('Please enter both email and password.');
+    return;
+  }
+
+  if (checkCredentials(email, password)) {
+    localStorage.setItem('isLoggedIn',    'true');
+    localStorage.setItem('loggedInEmail', email);
+    localStorage.setItem('lastLoginTime', Date.now().toString());
+
+    if (loginButton) {
+      loginButton.textContent = 'Redirecting\u2026';
+      loginButton.disabled    = true;
     }
 
-    // Clear any previous messages
-    messageElement.textContent = '';
+    window.location.href = '../pages/main.html';
+  } else {
+    showError('Username or password is wrong. Please try again.');
+    if (passwordInput) {
+      passwordInput.value = '';
+      passwordInput.focus();
+    }
+  }
+}
 
-    loginForm.addEventListener('submit', (event) => {
-        event.preventDefault(); // Prevent default form submission/page reload
+// ─── Persistent session check ─────────────────────────────────────────────────
+function checkPersistentLogin() {
+  const isLoggedIn    = localStorage.getItem('isLoggedIn');
+  const lastLoginTime = localStorage.getItem('lastLoginTime');
 
-        const usernameInput = document.getElementById('username').value.trim();
-        const passwordInput = document.getElementById('password').value.trim();
+  if (isLoggedIn === 'true' && lastLoginTime) {
+    const elapsed = Date.now() - parseInt(lastLoginTime, 10);
+    if (elapsed < SESSION_TIMEOUT_MS) {
+      window.location.href = 'main.html';
+      return true;
+    }
+    logout();
+  }
+  return false;
+}
 
-        // 1. Attempt to validate credentials against mock users
-        const userFound = MOCK_USERS.find(user => user.username === usernameInput && user.password === passwordInput);
+// ─── Logout helper ────────────────────────────────────────────────────────────
+function logout() {
+  localStorage.removeItem('isLoggedIn');
+  localStorage.removeItem('loggedInEmail');
+  localStorage.removeItem('lastLoginTime');
+}
 
-        if (userFound) {
-            // Success path
-            localStorage.setItem('authToken', 'mock_token_' + userFound.role);
-            localStorage.setItem('userRole', userFound.role);
-            // ... success logic ...
-        setTimeout(() => {
-            console.log("Login successful. Redirecting to dashboard...");
-            window.location.href = 'pages/main.html';
-    }, 1500);
+// ─── Init ─────────────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  if (checkPersistentLogin()) return;
 
-        } else {
-            // Failure path
-            messageElement.textContent = 'Invalid username or password. Please try again.';
-            messageElement.style.color = 'red';
-            console.warn("Login failed attempt for user: " + usernameInput);
-        }
-    });
+  // Enter key on either field triggers login
+  [getEmailInput(), getPasswordInput()].forEach(input => {
+    if (input) {
+      input.addEventListener('keydown', e => {
+        if (e.key === 'Enter') handleLogin(e);
+      });
+    }
+  });
 });
